@@ -1,0 +1,1094 @@
+%-*- English -*-
+% Created: 12.07.05 19:14:24 by Administrator
+%
+% $Id: bibedt.tex,v 1.64 2006/08/13 13:04:57 stievie Exp $
+
+% Compile this file with (may require several runs):
+%   latex bibedt.tex
+%   bibtex bibedt
+
+%BibEdt
+\newcommand\BibEdt{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.09em
+    {\sc E\kern-.07em d\kern-.07emt}}}
+%BibTeX
+\newcommand\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+    
+% Preamble
+\documentclass[oneside,10pt]{article}
+% The document is in english language
+\usepackage[english]{babel}
+%\usepackage{hyperref}
+% Format URLs
+\usepackage{url}
+% For code environment
+\usepackage{fancyvrb}
+% Code environment
+\DefineVerbatimEnvironment{code}{Verbatim}{fontsize=\footnotesize,frame=single,framesep=2mm,xleftmargin=5mm,xrightmargin=5mm}
+
+% <keystroke>
+\newcommand{\keystroke}[1]{$\langle\hbox{\texttt{\textsl{#1}}}\rangle$}
+% Command
+\newcommand{\command}[1]{\textsf{#1}}
+% C++
+\newcommand{\Rplus}{\protect\nolinebreak\hspace{-.07em}\protect\raisebox{.25ex}{\small\textbf{+}}}
+\newcommand{\Cpp}{C\Rplus\Rplus}
+% A Box
+\newcommand{\hint}[2]{
+	\begin{center}
+		\fbox{\medskip\parbox{.95\textwidth}{
+			\textbf{#1~~}\emph{#2}
+		}\medskip}
+	\end{center}
+}
+% FAQ
+\newcommand{\question}[1]{\item[\textbf{Q:}] #1 \vspace{-1.5ex}}
+\newcommand{\answer}[1]{\item[\textbf{A:}] #1}
+% Spam stuff
+\newcommand{\at}{@}
+\newcommand{\dt}{.}
+\newcommand{\stievieaddress}{stievie\at{}users\dt{}sourceforge\dt{}net}
+\newcommand{\stieviemail}{\texttt{\stievieaddress}}
+\newcommand{\nilsaddress}{hops-1\at{}users\dt{}sourceforge\dt{}net}
+\newcommand{\nilsemail}{\texttt{\nilsaddress}}
+
+% Version of BibEdt
+\newcommand\VER{0.7}
+
+% Document
+\begin{document}
+
+% The Title
+\title{\BibEdt \\ Version \VER{}}
+\author{Stefan Ascher\footnote{\protect\stieviemail{}}\\
+  Nils Wiese\footnote{\protect\nilsemail{}}}
+\maketitle
+
+\begin{abstract}
+\BibEdt{} is a simple program to edit \BibTeX{} \cite{patashnik:1988a} files and
+a basic Z39.50 client for
+the Win32 platform. It has a standard Windows userinterface and should be easy to
+use. It allows you to add, edit and remove records from a \BibTeX{} file, as well
+as editing a preamble and string macros. Additionally it features Copy and Paste
+using the Windows clipboard, filter and quicksearch functionality. You can use
+this program for both, source code based and dialog based editing of \BibTeX{}
+files.
+\end{abstract}
+
+\tableofcontents
+
+% We've some \verb's in footnotes
+\VerbatimFootnotes
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% beginning of text
+
+\section{Introduction}
+\label{sec:Introduction}
+
+A very simple program to edit \BibTeX{} files \cite{jacobson:1996}. I didn't find
+something that fits my needs, and no, this program doesn't either at the moment,
+but it becomes better. I found BibEdit\footnote{\url{http://www.iui.se/staff/jonasb/bibedit/}}\index{BibEdit}
+to be useful, but it seems that this program is no longer maintained and the source
+is not available, so I started this little program.
+
+This program was not intended as a replacement of EndNote\footnote{\url{http://www.endnote.com/}}
+or ProCite\footnote{\url{http://www.procite.com/}} (two popular commercial reference
+managers), it's just a little program
+to edit \BibTeX{} files. However, it's up to you to use this program as reference
+manager, without using \LaTeX{}---you don't need \LaTeX{} or \BibTeX{} to run this
+program. If you would like to see a feature implemented, that provides a better
+intergration into your word processing program (e.g. MS Word, OpenOffice.org Writer
+WordPerfect or AbiWord), feel free to make a feature request. I do not use these programs
+(although I have installed them), so a small description how to achieve that should
+be provided.
+
+\section{What is \BibTeX{}?}
+\label{sec:WhatIsBibtex}
+
+\BibTeX{} is an addition to the \LaTeX{} typesetting system that makes citations
+and bibliographies\index{Bibliography} real painless. It automatically picks all cited references in
+a document from a database file (the \BibTeX{} file) and puts a nice bibliography
+right into your final text, you don't need to sort the bibliography each time you
+add a citation, it does everything for you.
+
+If you think now: ``Buah, my Word\textsuperscript\textregistered{}\index{Word}
+does not have that!'', then you should check out
+Mik\TeX{}\footnote{\url{http://www.miktex.org/}} and you will have this beside much
+more, e.g. a beautiful book \cite[p.~1]{knuth:1984} (or article or whatever), no longer
+hassles with not functioning, incomplete beta software for an exorbitant price,
+no random and/or regular crashes, no missplaced footnotes, figures, tables, no
+corrupted, unrecoverable binary files and so on.
+
+If you want to know more you could have a look at the source of this document
+(included in the source distribution). It is simple and shows pretty good how to
+write a basic article with \LaTeX{} and how to let \BibTeX{} append a bibliography
+to the document.
+
+\section{License}
+\label{sec:License}
+
+\BibEdt{} is subject to the GNU General Public License\index{License} Version 2 (the ``License'');
+you may not use this project except in compliance with the License. You may obtain
+a copy of the License at \url{http://www.gnu.org/copyleft/gpl.html}.
+
+The \BibTeX{} lexer (\verb|lexbib|) may alternatively to the GPL also be used under the
+same license as Scintilla.
+
+\section{Installation}
+\label{sec:Installation}
+
+The easy way is to download the Setup\index{Setup} program from a SourceForge
+mirror\footnote{\url{http://sourceforge.net/project/showfiles.php?group_id=142263&package_id=156662}}
+which contains all required files. Install the program with a double click on the
+Setup program. The Setup program additionally creates some icons to start the program.
+
+Another way is to download\index{Download} the binary distribution of the program.
+Just unzip the file \verb|bebin-ver.zip| (binary) or \verb|besrc-ver.zip|
+(source)---where ``ver'' stands for the version number---to any directory and run
+it from there. It will create some files in this directory the first time you start it.
+When you download the ZIP package of \BibEdt{} the first time you must also download an additional
+package with some libraries \BibEdt{} uses. You can download it from a SourceForge
+mirror\footnote{\url{http://sourceforge.net/project/showfiles.php?group_id=142263&package_id=162662}},
+it has the filename \verb|yazbin-ver.zip|. You \emph{must} download this package
+and extract the files into the directory of \BibEdt{}.
+
+\hint{Warning}{\BibEdt{} can't run without these libraries! You won't even see the
+main window when you try to start it and the libraries are not present. It will
+exit with an error message that YAZ.DLL and/or LIBXML2.DLL can't be found.}
+
+\subsection{Requirements}
+\label{sec:Requirements}
+
+In order to be able to run this tiny little program you need:
+\begin{itemize}
+  \item A computer with an Intel x86 compatible processor.
+  \item A 32~Bit MS~Windows operating system, like Windows~NT~4.0~(SP~6), Windows~2000
+    and Windows~XP. Windows~9x and ME are not officially supported but it may run on
+    them as well. It does currently not run on ReactOS\footnote{\url{http://www.reactos.org/}},
+    I don't know why, it does not use or do something advanced. Maybe because of MFC.
+\end{itemize}
+There may be a need to update the following libraries on older systems, such as
+Windows~95:
+\begin{itemize}
+  \item MS~V\Cpp~6.0 and MFC~4.2 runtime libraries.\footnote{Download
+    at \url{http://support.microsoft.com/kb/q259403/}.}
+  \item Common Controls at least version~5.80 (comes with Internet Explorer~5 or
+    newer).\footnote{\url{http://www.microsoft.com/downloads/details.aspx?FamilyID=6f94d31a-d1e0-4658-a566-93af0d8d4a1e&displaylang=en}}
+    The proper version of this library is also installed with the V\Cpp{} runtime libraries.
+\end{itemize}
+
+\subsection{Files}
+\label{sec:Files}
+
+Following files\index{Files} are included in the binary distribution:
+\begin{itemize}
+  \item \verb|bibedt.exe| The main program file. Start this file to execute \BibEdt{}.
+  \item \verb|SciLexer.dll| Scintilla\footnote{Get the source from \url{http://www.scintilla.org/}.}
+    editor control. The editor with syntaxhighlight and much more.
+  \item \verb|lexbib.dll| The \BibTeX{} lexer for Scintilla.
+  \item \verb|regex.dll| The regular expression library.
+  \item \verb|changelog.txt| A list of changes to the program.
+  \item \verb|license.txt| The GPL, the license for this program.
+  \item \verb|readme.txt| A Readme file.
+  \item \verb|*.xsl| Some XML styledsheet files to format the XML export, the preview
+    and maybe more.
+\end{itemize}
+YAZ distribution contains the following files:
+\begin{itemize}
+  \item \verb|yaz.dll| The Z39.50 client.
+  \item \verb|libxml2.dll| An XML parser used by YAZ and \BibEdt{}.
+  \item \verb|libxslt.dll| The library for XSL transformation.
+  \item \verb|iconv.dll| Character set conversion library used by libxml, YAZ and \BibEdt{}.
+  \item \verb|zlib1.dll| Compression library used by libxml.
+  \item \verb|readme.txt| A file with some instructions.
+\end{itemize}
+All these files are installed with the setup program.
+
+The following files are created in the config directory (initially the directory
+of the program) when you run the program the first time or this files are needed
+the first time.
+\begin{enumerate}
+  \item \verb|config.bib| File containing informations about types and fields. Edit this
+     file to fit your needs.
+  \item \verb|enc_tex.txt| File containing informations about how to encode characters.
+  \item \verb|enc_html.txt| Same as above but for HTML.
+  \item \verb|enc_rtf.txt| For RTF.
+  \item \verb|enc_xml.txt| XML.
+  \item \verb|profiles.xml| to save search profiles.
+  \item \verb|exporter.xml| the list of custom exporter.
+  \item Maybe some more.
+\end{enumerate}
+Edit these files to fit your needs, the encoding files---which are mainly used by
+the exporter---should be ok for all already and the profiles file is saved automatically.
+If you change the configuration directory (Options dialog $\rightarrow$ page Directories),
+you should move or copy these files to the new directory.
+
+\subsection{Uninstall}
+\label{sec:Uninstall}
+
+If you've installed \BibEdt{} with a Setup program then open the Control Panel Applet
+``Software'', locate \verb|BibEdt XX| (\verb|XX| is the version number)
+in the list and double click on it. Alternatively you  can also use the \verb|Uninstall|
+icon in the \verb|BibEdt| program group of the Start menu. This will uninstall\index{Uninstall}
+\BibEdt{} with all files and registry keys.
+
+If you didn't use the Setup program but the ZIP package then just delete the extracted
+and created files and the registry\index{Registry} key:\\
+\verb|HKEY_CURRENT_USER\Software\Ascher\BibEdt|.
+
+\section{Features}
+\label{sec:Features}
+
+At the moment it does not have much features\index{Features}. Reasons may be that this project
+is still at a starting point and I'm not a big \Cpp{} coder. MFC seems strange to
+me since I know Borlands VCL and how easy programming could be.
+\begin{itemize}
+  \item Load and save \BibTeX{} files.
+  \item You can use the Windows clipboard (\ref{sec:Clipboard}).
+  \item It can find items with the same field values.
+  \item Sort the file by key in a manner that \BibTeX{} has no problems with it
+  (see~\ref{sec:CrossrefFields}). Beside that the List view may be sorted by any
+  column with sort header which does not modify the file.
+  \item Print and print preview.
+  \item Export to various formats such as Text, RTF, HTML, XML (see \ref{sec:Export})
+    and support for plug-in custom exporter (\ref{sec:AddingExporter}).
+  \item Drag and Drop (\ref{sec:DragAndDrop}).
+  \item Fully customizeable filter (\ref{sec:Filter}) and quicksearch (\ref{sec:Quicksearch}).
+  \item Generate a \BibTeX{} file from auxiliary file (see Section~\ref{sec:GenFromAux}).
+  \item Some support for the special field \verb|crossref| (see Section~\ref{sec:CrossrefFields}).
+  \item Search online databases that support the Z39.50 protocoll (\ref{sec:SearchOnlineDBs}).
+  \item It's a light weight program and no istallation is required. Don't be confused
+    about all that DLLs, most of them are required for the online search.
+\end{itemize}
+
+So, why the hell do I take the pain and use \Cpp{} (MFC) when there is a much easier
+way?! Well, that's a good point, this program would be done in Delphi in one
+afternoon (I'm sleeping in the morning), but then, where would be the challenge?
+
+\section{Usage}
+\label{sec:Usage}
+
+Just open a \BibTeX{} file (\verb|*.bib|) of your choice and edit, add, remove etc. records and fields.
+Well, I think there isn't much more to say about the usage. You'll be familiar
+with it soon, if you've used a Windows program at least one time.
+
+\subsection{Views}
+\label{sec:Views}
+
+There are two ways to edit a \BibTeX{} file, a dialog and source code based way. To
+edit an item visually, i.\,e. with a ``point and click'' interface, focus one in
+the list and switch do the Record view. There you can edit all aspects of the item.
+To edit the source switch to the Source view.
+
+This means, this program has three so called ``Views''\index{View}: (1) the
+\emph{List}\index{View!List} view, (2) the \emph{Source}\index{View!Source} view
+and (3) the \emph{Record}\index{View!Record} view. To activate a certain view use
+the tabs at the top of the main window. Depending on the selected view the commands
+may have a different meaning. This affects especially the edit commands. For example,
+when the List view is active the Copy command copies the selected item(s) in the
+list, but in Source view the selected text. The same applies to the file print
+commands.
+
+Find and replace is similar, in List view you search certain field values for a
+certain text, in Source view you search for a certain text in the source of the
+file. You can use for both regular expressions\index{Regular Expressions}, but alas
+the syntax is different. Scintilla has built in support for regular exprssions using
+a certain library\footnote{Originally developed by Ozan S. Yigit at the University
+of York (\url{http://www.cs.yorku.ca/~oz/}).} and the List view uses another library---the
+GNU regular expression library (see Section~\ref{sec:Credits}). Well, now you
+know that you must use a slightly different syntax for the two views and are not
+upset that nothing is working again :-).
+
+The List view has two panes, (1) the list itself, which shows all items, and (2)
+a preview. The List view can be used to browse, view, select, remove items. Items
+with missing fields have a red text color in the List view. Edit \verb|config.bib|
+to change the required, optional and ignored fields of a certain type (see
+Section~\ref{sec:Configuration}). The preview shows a preview of the focused item
+and some fields, such as `Url', `Local-Url', `PDF',
+`PS', `DOI' \cite{internationaldoifoundationidf:2005} and `crossref' (see
+also~\ref{sec:CrossrefFields}), as clickable links. Clicking on a
+`crossref' link will focus the referenced item, the other links will show the
+linked file, URL or whatever with the systems default application. DOI\index{DOI}
+addresses are automatically resolved, so you can just enter e.g. \verb|10.1000/182|
+or \verb|doi:10.1000/182| as Field value and will get the URL \url{http://dx.doi.org/10.1000/182}
+which will take you to the actual URL where the document is located.
+
+The Preview is completely customizeable via XSL transformation. Edit \verb|preview.xsl|
+to do so. This works similar as the exporter, a XML file is created from the focused
+item and a XML stylesheet is applied. The resulting HTML file (not a physical file,
+this all happens in memory only) is shown in the Preview pane. Please note that
+the HTML viewer of the Preview pane is very simple and does not understand advanced
+features such as CSS.
+
+\subsection{Selection vs. Focus}
+\label{sec:SelectionVsFocus}
+
+I think it is important to make the distinction between the (one and only)
+\emph{focused} item and the \emph{selected} item(s) clear. The program has always
+only one selected record, except the file has no records at all, i.e. it is empty. This
+is the focused\index{Focus} item (the item with the focus rectangle) in the List
+view. This need not necessarily be the selected\index{Selection} one. Because more
+than one items may be selected in the list, but only one can have the focus. If
+you move the record pointer with one Record command only the focus is changed in
+the list, not the selection. However, if you select an item with a click or with
+the keyboard in the list, also the selection changes of course.
+
+The Record view shows always the focused item, as well as the preview pane. It does not
+care about the selection in the list. The same applies for the Source view, which
+jumps to the focused item when you switch to it. Sayed that, it is clear that the
+Record $\rightarrow$ Remove command deletes the \emph{focused} item, whereas the
+Edit $\rightarrow$ Delete command deletes \emph{all selected} items in the list.
+So we can say now that the Record commands operate on the focused item and the
+Edit commands do something with, or change the selection.
+
+By default only the selected items in the list are printed\index{Print} and
+exported\index{Export}. If no items are selected the entire list is printed and
+exported, regardless what item currently has the focus.
+
+\subsection{Editing}
+\label{sec:Editing}
+
+Usually you edit a record in Record view. Click twice (slowly, not a doubleclick)
+on the field you want to edit and a small text box will appear where you can enter
+the value. In the same way you can change the name of a field.
+
+Although editing normal fields with short values is fine in Record view, longer
+values, such as for abstracts are a pain. You can use for these fields a dialog with
+a multiline edit, just doubleclick (Note: clicking twice on the item shows the
+inplace editor) on the field to show it. But a doubleclick on a `URL' or `Local-Url'
+field opens the file or URL, in this case you can use the Edit menuitem of the
+popup menu, or even the Browse menuitem if you wish to browse for a local file.
+The popup menu contains some more neat commands: (\textbullet)~Crossref shows a
+dialog to add a `crossref' field to an item in the file; (\textbullet)~Browse to
+browse for a local file; (\textbullet)~Local URL to add a `Local-Url' field with
+a filename as value; (\textbullet)~Filter
+applies a filter to the item, i.e. it adds the proper field with the proper
+value so that the item is visible when the file is filtered with the desired filter.
+
+\subsection{Autocomplete}
+\label{sec:Autocomplete}
+
+By default \BibEdt{} has a feature\index{Autocomplete} turned on that you might
+turn off, although it could save you much typing. If you edit a field value in
+Record view it suggests\index{suggest} you values that have the same field of other
+items in the file.
+
+This could be annoying especially for fields that can have a very long value,
+such as the abstract field. Turn it off with the Options dialog $\rightarrow$ page
+General $\rightarrow$ uncheck Autocomplete field values. You can temporarily disable
+it with the key combination \keystroke{Shift+Escape} in the inplace editor.
+
+\subsection{Clipboard}
+\label{sec:Clipboard}
+
+\BibEdt{} uses its own clipboard\index{Clipboard} format\index{Clipboard!Format},
+but if you have the source of one or more \BibTeX{} records as text in the clipboard
+you can directly paste it into \BibEdt{} with the Edit $\rightarrow$ Paste\index{Paste}
+command as well. If you paste a record, \BibEdt{} will check if \BibEdt{}'s own format
+is available and use this if possible, if not it tries the plain text format. Pasting
+records in plain text format may fail if the program can't parse it.
+
+If you copy an item it puts it as (\ref{ei:cfbibedt}) \BibEdt{}'s clipboard
+format, (\ref{ei:cfplaintxt}) as plain text (so you can paste it into any text
+editor), as (\ref{ei:cfrtf}) RTF\index{Clipboard!RTF} and (\ref{ei:cfhtml}) HTML
+(to paste it directly into a word processing program) to the clipboard. Usually
+the target program decides what format it likes most, Notepad will prefer plain
+text and a word processor most likely RTF or HTML. If your word processor supports
+HTML, I would prefer it over RTF.
+\begin{enumerate}
+  \item\label{ei:cfbibedt} \BibEdt{} clipboard format is a plain text format of
+    the source of the item. This format is only used by \BibEdt{} internally. If
+    you paste an item, and this format is available, it uses this, if this format
+    is not available it tries the plain text format.
+  \item\label{ei:cfplaintxt} Plain text of the source of the item. You can use this
+    to paste the item(s) as \BibTeX{} source.
+  \item\label{ei:cfrtf} Formated RTF as defined in \verb|config.bib|. In the future
+    this also will be done with XSL transformation.
+  \item\label{ei:cfhtml} Formated HTML as defined in \verb|copyhtml.xsl|.
+\end{enumerate}
+
+\subsection{Drag and Drop}
+\label{sec:DragAndDrop}
+
+This program supports the following Drag and Drop operations:
+\begin{enumerate}
+  \item You can drag a file from Explorer and drop it into the List view. This will
+    load the file.
+  \item You can drag a file from Explorer and drop it into the field list in
+    Record view. This will add a field with name `Local-Url'\index{Local-Url} and the filename as
+    value. The program converts backslashes to forward slashes\footnote{Windows
+    can handle forward slashes as directory separators quite well.} and add the \verb|file:///|
+    protocoll at the beginning: \verb|file:///D:/foo/bar.pdf|. Doubleclick on such a field
+    in the list, or on a `Url'\index{Url} field will open the file or URL. Also the preview
+    pane shows these fields as clickable links. More filenames are concatenated
+    with a \verb*|; |.
+  \item The source editor supports usual drag and drop editing. Select some text
+    and move it to another location.
+\end{enumerate}
+
+\subsection{Filter}
+\label{sec:Filter}
+
+First of all, filter\index{Filter} are great! They provide a way to filter the file. Every file may have its
+own set of filter. They are saved inside a \verb|@comment| tag, because these tags are
+ignored by \BibTeX{}. If you filter the file, it basically searches a certain field
+for a certain token. If it finds the token it shows the item, all other items are
+hidden. The Source view shows always the entire file.
+
+You can add, edit and remove filter for a file with the Filter dialog\index{Filter!Dialog}.
+Use the Filter menuitem in the Tools menu to show this dialog. Click the Add button,
+enter a name for the filter, and which field should contain what string. As all
+field names, the filter name must also not contain spaces and special characters. To
+apply a filter use the Filter ComboBox beside the toolbar. Using \command{[No Filter]}
+shows all items.
+
+A bibitem may belong to more categories\index{Cathegory}, let's assume you have a filter like:
+\begin{code}
+@comment{__filter__,
+  Psychologie={Cathegory=Psychologie},
+  IT={Cathegory=IT},
+  Statistik={Cathegory=Statistik},
+  Tests={Cathegory=Tests},
+  Biologie={Cathegory=Biologie},
+  Soziologie={Cathegory=Soziologie}
+}
+\end{code}
+then a bibitem like:
+\begin{code}
+@article{baron+kenny:1986,
+  author={R. M. Baron and D. A. Kenny},
+  title={The Moderator-Mediator Variable Destinction in Social
+    Psychological Research: Conceptual, strategic, and statistical
+    considerations},
+  journal={Journal of Personality and Social Psychology},
+  volume={51},
+  year={1986},
+  pages={1173--1182},
+  Cathegory={Psychologie, Statistik}
+}
+\end{code}
+whould be shown when you apply the filter ``Psychologie'' \emph{and} ``Statistik'',
+because the Cathegory field contains both words.
+
+The filter is not limited to a field. The program consideres the type of an item
+as virtual\index{Field!virtual} field named \verb|Type|\index{Type} and the key as
+field with name \verb|Key|\index{Key}, so using a filter like:
+\begin{code}
+@comment{__filter__,
+  Articles={Type=article}
+}
+\end{code}
+would show all articles in the file (the `@' is not part of the type). In the
+Filter dialog you can enter \verb|Type| as Field and \verb|article| in Contains.
+
+If the file is filtered and you add a new record to the file, it automatically
+applies the filter to the new item. Appending another file with the Import command
+does \emph{not} import the filter defined in the imported file. You could use the Source
+view to merge the filter from the two files without too much clicks.
+
+You can define a set of default filter in \verb|config.bib|. The syntax is the same
+as for ordinary \BibTeX{} files, it looks like an usual bibitem but is placed
+in a \verb|@comment| with name \verb|__filter__|. All default filter are appended
+to filter defined in the loaded file.
+
+\subsection{Quick search}
+\label{sec:Quicksearch}
+
+Quick search\index{Quicksearch} is similar to filter, but you don't define it before
+and choose then a filter, you enter the text to search for in an edit box and the
+programs shows only matching items. Invisible items, e.g. because you've applied
+a filter, are not searched and not shown even if one would match. Only items that
+are visible in the list are searched.
+
+Define the default fields\index{Quicksearch!Fields} to be searched in the Options
+dialog $\rightarrow$ page General. All fields
+must be separated with a semicolon (\verb|;|) and at the end there must also be such a
+thing. Example: \verb|key;author;title;| would search the Key, the Author and Title field.
+By default it uses this defined fields to search, but you can enter in the ComboBox
+directly what fields to search. More fields must be separated by a semicolon as
+in the Options dialog. To search all fields and the Key, but not the Type, choose
+\command{[All Fields]} in the ComboBox.
+
+Similar to filter, you are not limited to fields of items, you can also search
+for a type or a key of items, just enter \verb|Type| or \verb|Key| in the Fields ComboBox.
+For example, if you want to see all \verb|inbook|s enter in Fields \verb|Type| and
+in the search textfield \verb|inbook|.
+
+If you wish to search with regular expressions check the Regular expression menuitem
+of the Search menu.
+
+\subsection{Generate a \BibTeX{} file from an auxiliary file}
+\label{sec:GenFromAux}
+
+The program can scan auxiliary\index{Auxiliary} files emited by \LaTeX{}---such files contains all
+keys cited in a document---and generate from it a subset of a main database.
+
+To make it short, choose the Tools $\rightarrow$ Generate from AUX command, enter in the
+top textbox the toplevel auxiliary file, enter in the second textbox the target file
+and click Generate. This will create the target file from the currently open file
+only with the items cited in the document and with items referenced by cited items.
+If \command{Only required and optional fields} is checked in the dialog it removes
+all ignored and unknown fields from the resulting file.
+
+It is important that you enter the \emph{toplevel} auxiliary file, because only
+this file contains the citations. This file has the same filename as the main \LaTeX{}
+file, but with the the extension \verb|.aux|.
+
+\subsection{\texttt{crossref} fields}
+\label{sec:CrossrefFields}
+
+This program handles the \verb|crossref|\index{Crossref} field slightly different, see
+\cite[p.~2]{patashnik:1988a} what's all about with this field---very useful when
+you have much \verb|inbook|s or similar.
+\begin{enumerate}
+  \item You can easily add a reference to another item in the open file with the
+  popup menu of the field list (Record view) $\rightarrow$ Crossref. It will show
+  a dialog with all keys in the file. Selecting a key will add the field with the
+  selected key as value. If there is already such a field it replaces the old key
+  with the new, because only one can be referenced.
+  \item Similar to the URL and Local-Url fields it shows a clickable link in the
+  preview pane. Clicking on it will focus the referenced item.
+  \item Missing fields of items are filled with the fields of the referenced item
+  when you export to XML or descendeds.
+\end{enumerate}
+
+If you sort the file with the Record $\rightarrow$ Sort command all items that are
+cross-referenced by another item are put at the bottom of the file. It may be required
+that you use the Sort command twice, so it can identify all items that are referenced.
+This means the file isn't entirely sorted, but this is required by \BibTeX{} to
+work correctly. However, if you want the file sorted in the list you could use the
+sort header of the List view, this doesn't touch the file.
+
+\subsection{Serarch online databases}
+\label{sec:SearchOnlineDBs}
+
+You can search online databases which supports the Z39.50~\cite{niso:2003} protocoll. Go to Tools
+$\rightarrow$ Online search, enter some informations and the query string and click
+Search to start the query. The list at the bottom lists the results. Enter in the
+Show from~\dots{} and to~\dots{} textfields the record range to display. The first
+record starts with number 1. Enter \verb|0|
+as upper bound to show all records. The Next button will show the next records.
+The Import button imports the selected items in the list into the open document.
+
+You can save your access data---i.e. Hostname, Portnumber, Proxyhost etc.---in a file,
+so you don't need enter everytime the same you do a query. For this you need to
+create a new profile with the New button at the top of the Dialog, then enter a
+name for the profile. From now on the program fills in the data when you select
+a profile in the dropdown list the next time. Everything is saved, except the
+query string, also the password if you wish, but it is saved \emph{plain} to the
+file. You can choose the
+file in which the profiles are saved with the Options dialog $\rightarrow$ Files
+$\rightarrow$ Search profiles file.
+\hint{Warning}{The password is saved plain to the profiles file and everyone who
+has access to your computer can read it.}
+
+For the moment only response in USMARC (MARC~21) \cite{ndmsoffice:2004} format
+is supported, more formats may follow in the future.
+
+Index Data has a huge list\footnote{\url{http://www.indexdata.dk/targettest/}} of
+known server supporting the Z39.50 protocoll with all informations you need to know
+to access these server with \BibEdt{}.
+
+\subsubsection{Query types}
+\label{sec:QueryTypes}
+
+There are two different query types. These are ``PQF'' (Prefix Query Format) and
+``CQL'' (Common Query Language). Please consult the YAZ Users Guide for a description
+of the grammar located at \url{http://indexdata.dk/yaz/doc/} or as PDF at
+\url{http://indexdata.dk/yaz/doc/yaz.pdf}. The CQL format is
+straight forward, there you can simply enter for example \verb|author=knuth|.
+
+\subsection{Export}
+\label{sec:Export}
+
+With \BibEdt{} you can export a file or a subset of a file as many different formats.
+To export the file use the Export menuitem of the File menu. Choose in the apperaring
+file save dialog the filename and the export format. You need not enter a file extension,
+the exporter does that for you.
+\hint{Warning}{If a target file already exists, it'll overwrite it without asking
+you anything. The file save dialog doesn't warn you either.}
+
+If there is a selection in the List view it exports only the selected items. If
+there is no selection it exports the entire file. This way you can create a subset
+of the open \BibTeX{} file, just select the items you wish to export and choose
+as exporter \command{BibTeX}. Another way to create a subset of the open file---maybe if
+you wish to ship a \BibTeX{} file with only the items you cited in a certain
+document---is to let \BibEdt{} scan your AUX file and create a \BibTeX{} file with
+only the cited items in the document, see Section~\ref{sec:GenFromAux} for details.
+
+It has some built in exporter, such as plain text or XML\index{XML} \cite{w2c-xml:2004},
+and you can have custom exporter, which basically transforms the XML export with
+a XSL file to an other format. This has some significant advantages over built in exporter, because
+you're completely free how the final result will look, you just need to modify
+the respective XML stylesheet (XSL)\index{XSL} file \cite{w3c-xsl:2001}. You use some kind of language
+to extract the informations you want to show from the XML file. The extracted fields
+can be formatted with the usual HTML tags. Although this is not the place to
+teach you XSL and XPath \cite{w3c-xpath:1999}, here is a simple example of the
+body of an XSL file (for a ``real world'' file see \verb|plain.xsl|, which is used
+for the HTML export):
+\begin{code}
+<!-- Iterate through all bibitem tags within the bibliography tag. -->
+<xsl:for-each select="bibliography/bibitem">
+  <!-- Read the type field into variable item-type. -->
+  <xsl:variable name="item-type" select="type"/>
+  <!-- Depending on the type of the item use a different format -->
+  <xsl:choose>
+    <xsl:when test="$item-type = 'article'">
+      <!-- It's an article -->
+      <xsl:value-of select="author"/>  <!-- Print the author -->
+      <span style="font-style:italic;">
+        <xsl:value-of select="title"/> <!-- Print the title italic -->
+      </span>
+      In: <xsl:value-of select="journal"/> <!-- Print the journal -->
+      <!-- and so on ... -->
+    </xsl:when>
+    <xsl:when test="$item-type = 'book'">
+      <!-- It's a book -->
+      <!-- Do something with the fields -->
+    </xsl:when>
+    <--! Handle other types! -->
+    <xsl:otherwise>
+      <!-- It's something else -->
+      Unknown type!
+    </xsl:otherwisw>
+  </xsl:choose>
+</xsl:for-each>
+\end{code}
+If you edit a XSL file while \BibEdt{} is running, you should restart the program,
+because it loads the XSL file when it is first needed and keeps it then in memory
+for performance reasons.
+
+This program comes with a default XSL file (\verb|plain.xsl|), which tries to
+mimic the plain \BibTeX{} style and emits regular HTML. There are other XSL files
+included in the distribution, to produce other formats than HTML, like RDF, RTF,
+plain text.
+If you've created your own XSL file you can tell \BibEdt{} what file to link to
+the XML export with the Options dialog $\rightarrow$ Files $\rightarrow$ XML stylesheets file. If you
+want to provide your XSL style file to other users submit a
+patch\footnote{\url{http://sourceforge.net/tracker/?atid=753204&group_id=142263&func=browse}}
+and attach the file. I'll include it then in the binary distribution.
+
+\hint{Note}{Some browser may habe problems interpreting and rendering the exported
+file, but Firefox does it right.}
+
+You can translate the XML file into plain HTML with some external tools as well,
+such as Saxon\footnote{\url{http://saxon.sourceforge.net/}}\index{Saxon},
+or xsltproc\footnote{\url{http://xmlsoft.org/XSLT/} download
+\verb|libsxlt-version+.win32.zip| (\verb|version| denotes the version number)
+from \url{http://xmlsoft.org/sources/win32/}.}. If you call Saxon with the arguments:
+\begin{verbatim}
+saxon.exe -a -o "result.html" "infile.xml"
+\end{verbatim}
+it'll create \verb|result.html| from the source XML file \verb|infile.xml|. Meaning
+of the commandline options:
+\begin{description}
+  \item[-a] Use the linked stylesheets file.
+  \item[-o] Write result to file rather than to the standard output (StdOut).
+\end{description}
+Saxon is also useful for debugging XSL files because the error messages are more
+meaningful than that of Firefox.
+
+\subsubsection{Adding exporter}
+\label{sec:AddingExporter}
+
+To add a custom exporter use the Options dialog $\rightarrow$ page Exporter. There
+you must choose which XSL file should be used for the transformation, the character
+encoding, file extension and file filter. The dot belongs to the extension, so
+\verb|.txt| should be used for text files, not \verb|txt|. If you omit the dot
+the program adds it for you.
+
+The built in exporter can't be removed or edited. For a HTML exporter use the
+\verb|plain.xsl| file, for a RDF exporter the \verb|xml2rdf.xsl| file etc. There
+are other XSL files distributed with the program, but not all are exporter, and
+some are for internal use, e.g. \verb|preview.xsl| for the preview.
+
+\subsection{DDE}
+\label{sec:DDE}
+
+To be able to control a program with DDE\index{DDE}\footnote{A technique for
+sharing memory and interprocess communication.} you need a Server name and (optional) a
+Topic, use the informations bellow:
+\begin{description}
+  \item[Server]\index{DDE!Server} \verb|bibedt|
+  \item[Topic]\index{DDE!Topic} \verb|System|
+\end{description}
+
+In the DDE message descriptions, the square bracket characters \verb|[| and \verb|]|
+in DDE messages are significant, and must be included as part of the message.
+The following DDE commands\index{DDE!Commands} are supported:
+\begin{description}
+  \item[open] \verb|[open("filename")]|: Open the file with \verb|filename|.
+  \item[print] \verb|[print("filename")]|: Print file with \verb|filename| to default
+    printer.
+  \item[printto] \verb|[printo("filename","printername","driver","port")]|: Print file with \verb|filename|
+    to printer with \verb|printername| and \verb|driver| on \verb|port|.
+  \item[goto] \verb|[goto("filename","itemkey")]|: Open file with \verb|filename| and
+    focus item with key \verb|itemkey|.
+  \item[focus] \verb|[focus("itemkey")]|: Focus the item with \verb|itemkey| in the
+    open file.
+  \item[find] \verb|[find("string")]|: Quicksearches \verb|string| in selected fields.
+  \item[filter] \verb|[filter("name")]|: Sets filter with \verb|name|.
+\end{description}
+
+\subsection{Command Line}
+\label{sec:CommandLine}
+
+Alternatively to DDE you could also use the command line\index{Commandline}. The syntax is as follows:
+\begin{verbatim}
+bibedt.exe [[/<action>] <filename> [<driver> <port>]]
+\end{verbatim}
+Where \verb|action| can be:
+\begin{description}
+  \item{\verb|p|:} Print the given file and exit.
+  \item{\verb|pt|:} Print given file to a certain printer with certain driver on
+    certain port.
+  \item{\verb|dde|:} Execute a DDE command.
+\end{description}
+If no action is supplied the program will just open the file. If an action is supplied
+also a filename must be supplied. If neither nor is supplied the program starts
+with an empty file. The following example opens the file, prints it to the default
+printer and exits:
+\begin{verbatim}
+bibedt.exe /p "myfile.bib"
+\end{verbatim}
+As ever, filenames containing whitespace (space or tab) must be surrounded by double
+quotes.
+
+\section{Configuration}
+\label{sec:Configuration}
+
+\subsection{\texttt{config.bib}}
+\label{sec:configbib}
+
+There is not much to configure, except the \verb|config.bib| file is maybe worth
+some words. This file defines the types of bibliography items, how to format them
+for printing, exporting and the preview. A detailed explamation of the file can
+be found in the file itself, it is pretty good commented, in my opinion. You should
+\emph{not} use \BibEdt{} to edit this file, because it's not a regular \BibTeX{}
+file, use an ordinary texteditor instead.
+
+The program loads the file at startup and keeps it then in memory. So, if you have
+modified the file, modifications will not take affect until you start the program
+the next time. If you want the original file back, then just delete it. The program
+automatically creates the default file, if it can't find it.
+
+\subsection{Insert selected key into an Editor}
+\label{sec:InsertKey}
+
+Another feature requires some description, namely how to insert the selected key
+into your \LaTeX{} editor with one click. First you must tell \BibEdt{} what's your
+default editor: Open the Options dialog, go to the Editor page and enter the window
+class name of the top-level and the child window. You can find the class names of
+windows with programs like GetWnd\footnote{\url{http://web.utanet.at/ascherst/files/getwnd.zip}
+(200~KB)}.
+In this program the first item in the list is the top-level window and the last
+the child window you should enter, when you move the mouse over the editor area
+of your editor. Then you can just use the Insert Key command
+of the Record menu. Your program (more precicely the child window) must handle the
+\verb|WM_PASTE| window message, because it copies the selected key to the clipboard
+and sends then the \verb|WM_PASTE| message to the window, if the program has found
+one. Of course, the program must run to be able to find the window. As far as I can see WinEdt
+does not handle this message, so this does not work for you if you use WinEdt.
+It doesn't work with TeXnicCenter either, because MFC uses window class names in
+a strange way, but it works with the syn Text Editor\footnote{\url{http://web.utanet.at/ascherst/syn/}.
+I noticed the program freezes on XP frequently when you save a file, but I've no
+time to fix that.}.
+Enter \verb|TSynMainForm| as top-level window and \verb|TSynEdit| as child window
+if you use syn. Sorry, but I don't know any other method to insert text in an editor
+which is unknown at designtime.
+
+\subsection{Configuration directory}
+\label{sec:ConfigurationDirectory}
+
+If more users on one copmuter use this program and wish to have different configurations
+you should change the configuration directory from the program directory to somewhere
+in the users application data directory\footnote{On Windows~NT usually
+\verb|C:\WINNT\Profiles\<username>\Application Data|, on Windows~2000 and later
+\verb|C:\Documents and Settings\<username>\Application Data|.} (Options $\rightarrow$ Directories $\rightarrow$
+Configuration directory). Before that you should create this directory
+and copy the configuration files into it. Changing this directory may require a
+restart of the program, because some of the files are loaded at program start, and
+kept then in memory.
+
+\section{Localization}
+\label{sec:Localization}
+
+\BibEdt{} can be localized with resource DLLs. I do not provide such DLLs, so if
+you want \BibEdt{} in your language you've to make the DLL for your language with
+the translations of the original resources---Dialogs, Menus, Toolbars, Strings etc. See the MSDN library
+how, especially the Articles Q198846 \cite{microsoft:2004}, Q147149 \cite{microsoft:2004a} and
+TN057 \cite{microsoft:2004b}.
+The DLL must have exactly the same version number as \BibEdt{} and in the Comment
+field of the version resource must be the name of the language (e.g. German).
+
+To use your resource DLL make a subdirectory with the name \verb|lang| and put it
+in there. Then open the Options dialog, go to the Language tab and select your
+language. You may need to restart \BibEdt{}.
+
+If you have problems with your resource DLL you may face strange effects and it's
+possible that you can't change the language back with the Options dialog, maybe
+because \BibEdt{} doesn't even start. In such a case start RegEdit open the key
+\verb|HKEY_CURRENT_USER\Software\Ascher\BibEdt\Settings| and delete the value of
+\verb|Language|. Then you'll have the built in english language again.
+
+\section{Warning}
+\label{sec:Warning}
+
+Use this program with care and always make a backup copy of the file before you
+save it. The parser may still contain bugs and/or does not support some feature
+\BibTeX{} supports. The program creates by default a backup copy before you save
+a file, but you can turn it off. The backup file has the same filename but with
+the extension \verb|.~bib|.
+
+You've been warned, the rest it up to you. However, I use this program without
+major problems, e.g. it didn't destroy my \BibTeX{} files so far.
+
+If you've problems with this program use a tracker at SF\footnote{\url{http://sourceforge.net/projects/bibedt/}}
+or the forum, or use another program.
+
+\section{Limits and Problems}
+\label{sec:LimitsAndProblems}
+
+There are the following limits:
+\begin{itemize}
+  \item Only curly brackets\index{Brackets} can be used, round brackets will confuse the program:
+\begin{code}
+@article(key,
+  foo=(bar)
+)
+\end{code}
+    does not work, it should be:
+\begin{code}
+@article{key,
+  foo={bar}
+}
+\end{code}
+  \item All field values must be enclosed in curly brackets (\verb|{}|). The following
+  code is wrong and will not work, although it might work for \BibTeX{}\footnote{Sometimes
+  I think \BibTeX{} must use some bayesian \cite{bayes:1763} algorithm to parse
+  such files. Indeed, it seems hard to me to write a robust parser for \BibTeX{}
+  files!}:
+\begin{code}
+@article{key,
+  foo="bar"
+}
+\end{code}
+  \item Forename must appear before the surename, so it should be:
+\begin{code}
+@article{key,
+  ...
+  author={Forename Surename},
+  ...
+}
+\end{code}
+  and not:
+\begin{code}
+@article{key,
+  ...
+  author={Surename, Forename},
+  ...
+}
+\end{code}
+  Multiple names must be combined with \verb|and|. Additions to the name must be
+  grouped, e.g. \verb|Ludwig {van Beethoven}|, \verb|Pierre {La Mure}|,
+  \verb|Artemio {Ramirez Jr.}|. Everything that does not have fore- and surenames,
+  such as company names, organisations etc., must be enclosed in braces, e.g.
+  \verb|{Intel Corporation}|. Other formats will confuse the key generation algorithm,
+    but does not have any other effects.
+  \item Comments\index{Comment}, marked with \% are not written to the file when you save it, you
+    could use \verb|@comment{...}| instead. In \BibTeX{} everything not starting
+    with a `@'\index{@} is a comment. This program will skip everything not starting with `@'. This
+    means everything that does not start with a `@' is stripped from the file when
+    you save it. It would be hard to fix this issue.
+  \item The \verb|key| and \verb|type| fields are special fields, I know this conflicts
+    with \BibTeX{}, I'm working on that\dots{}
+  \item It should maintain the order\index{Order} of the items. However, if you
+    use the strings\index{Strings} or preamble dialog strings and preambles\index{Preamble}
+    are always put to the top of the file.
+    This may cause problems when you use string macors in a preamble. The order
+    of real bibitems are not thouched, unless you sort the file. If you sort the
+    file \verb|@string|s are put before any preambles, so you can use string marcos in
+    preambles.
+  \item \TeX\ escape sequences must be enclosed in curly brackets, e.g. \verb|{\"a}|,
+    \verb|\"a| has no negative effect, but won't be translated into an `\"a'.
+  \item In my humble opinion, there shouldn't be a comma after the last field:
+\begin{code}
+@article{key,
+  ...
+  foo={bar},
+  lastfield={some value},
+}
+\end{code}
+    However, if there is such a thing, \BibEdt{} just removes it.
+  \item The program will produce unpredictable results when a file is opened \BibTeX{}
+    reports errors.
+\end{itemize}
+Ok, this is quite a lot, but I'm working at least on some of these problems.
+
+\section{FAQ}
+\label{sec:Faq}
+
+Some more or less frequently asked questions, or questions that might be of interest.
+
+\begin{itemize}
+  \question{What does this stupid program do?}
+  \answer{You can use this stupid program to edit \BibTeX{} files. If you have
+    nothing to do with \BibTeX{} you should either change this quickly or this
+    program is most likely useless for you.}
+
+  \question{This program crashes sometimes, was this intended?}
+  \answer{No.}
+  
+  \question{And how about freezing?}
+  \answer{No.}
+
+  \question{Other bugs?}
+  \answer{No.}
+
+  \question{The ugly interface?}
+  \answer{Yes.}
+
+  \question{Are there better programs that do the same?}
+  \answer{Check out JabRef\footnote{\url{http://jabref.sf.net/}} or BibDesk\footnote{\url{http://bibdesk.sf.net/}}
+     if you use Mac.}
+
+  \question{Do you add feature XXX?}
+  \answer{Open a feature\index{Feature} request at the SourceForge project page\footnote{\url{http://sf.net/projects/bibedt/}}.}
+
+  \question{Do you fix bug XXX?}
+  \answer{Make a bug\index{Bug} report at the project page.}
+  
+  \question{Isn't is useless to make this program localizeable but do not provide
+    language DLLs? I mean, if I would be a programmer and would have the tools,
+    I would write such a program for my own and it would be much better.}
+  \answer{Do what you want.}
+
+  \question{Copying a lot of items in the list takes a long time, why is that the case?}
+  \answer{It iterates through the list and copies\index{Copy} the selected items as four different
+     formats. That are (1) plain text, (2) \BibEdt{}'s own clipboard format,
+     (3) formated RTF and (4) formated HTML. RTF and HTML are useful because so
+     you can paste it directly into your word processing program.}
+
+  \question{I run this program on XP\index{XP}, but the tabs\index{Tab} of the mainwindow doesn't seem to have
+     the usual style as tabs on XP have. What's wrong?}
+  \answer{This is not a normal windows tab control, it is not a tab control at all, these
+     are just some lines in different colors drawn on the main window. So nothing
+     is wrong, this will look on all windows versions exactly the same.}
+
+  \question{Some things only work poorly, or don't work at all. Are you sure that
+    you want to release this program.}
+  \answer{Well, things may become better when there is something different than a `0'
+    as major version number.}
+    
+  \question{When will the first non-Beta version be available?}
+  \answer{Uhm\dots{}}
+  
+  \question{``Beta'' means usually a feature freeze. Does this mean you don't add
+    new features in the near future?}
+  \answer{Who sayed that? IMHO, ``Beta'' means it could work, but it need not.
+    \BibTeX{} is beta since more than 20~years.}
+
+  \question{May I contribute to this \emph{excellent} project?}
+  \answer{Sure, mail me what you want to do.}
+  
+  \question{How do I download the sources via CVS?}
+  \answer{SourceForge has a good explanation of CVS\index{CVS}
+    itself\footnote{\url{http://sourceforge.net/docman/display_doc.php?docid=14033&group_id=1}}
+    and provides all informations you must know for a certain
+    project\footnote{\url{http://sourceforge.net/cvs/?group_id=142263}}.
+    If you ask me what's the easiest way to get the sources then download
+    TortoiseCVS\footnote{\url{http://www.tortoisecvs.org/}}, install it and do a
+    ``Checkout'' of the \emph{Module} \texttt{bibedt}, the rest shoudn't be a problem.
+    Note: We use currently CVS and not SVN.}
+  
+  \question{May I donate money to this awesome program?}
+  \answer{Sure, just got to \url{http://sourceforge.net/donate/index.php?group_id=142263}
+    or \url{http://www.doctorswithoutborders.org/} or
+    \url{http://www.amnesty.org/} or such. If you donate to \BibEdt{} 10\,\% of your
+    donation will receive SourceForge for their excellent service.}
+
+  \question{Is there really a need for this program?}
+  \answer{Is there a need for \emph{any} program???}
+\end{itemize}
+
+\section{Support}
+\label{sec:Support}
+
+Support\index{Support} is provided via public forums, so that other users can benefit
+from you questions and reports. In special, rare cases, e.g. if you don't like the
+publicity of such a forum, you may mail me directly. I encurage everybody to encrypt
+their mails, not at least to reduce the risk that I delete your mail by accident---Spam
+became a big problem. My public GnuPG\footnote{\url{http://www.gnupg.org/}}
+key\footnote{The fingerprint is \verb|10D4 A724 7B54 253A B8D7 2E54 1F5F 0FFD 2195 2A98|.}
+can be found at \url{http://bibedt.sourceforge.net/stievie.asc}.
+
+If you've found a bug then make a bug report, if you would like to see a feature
+in a future version make a feature request. In either case, please provide a \emph{detailed}
+description of what's wrong or what would be great, and maybe ideas how to accomplish
+that. In case of a bug, it would also be interested to know what you did before
+you noticed the problem.
+
+\section{To do}
+\label{sec:ToDo}
+
+\begin{itemize}
+  \item Characterconversion does not work very good. All conversion should be done
+    by iconv, it is possible to add custom charactersets (\BibTeX{}, RTF, HTML
+    $\leftrightarrow$ current systems characterset), but at the moment iconv does
+    not like my attempts doing that.
+  \item Print and Print Preview for the List and Source view is buggy.
+  \item Resonse from a Z39.50 server can vary very much. The program should be able
+    to handle most of them. The response should arrive in XML and then should be
+    transformed with XSL into a uniformed and simplified XML which \BibEdt{} can understand. This
+    way only an XSL file will be added when a server response cannot be handled.
+  \item It should be possible to hide the Preview pane. Unfortunately this does
+    not do MFC.
+\end{itemize}
+For the far future:
+\begin{itemize}
+  \item Undo/Redo for the list view. Ouch, this sounds hard.
+  \item The \BibTeX{} parser should become more robust. It should be able to handle
+    all files \BibTeX{} accepts.
+\end{itemize}
+
+\section{Credits}
+\label{sec:Credits}
+
+Code not written by me:
+\begin{itemize}
+  \item Neil Hodgson for Scintilla, the source editor control.
+  \item Horst Br\"uckner for the MFC interface to Scintilla, found at CodeProject\footnote{\url{http://www.codeproject.com/}}.
+  \item Zoran M.Todorovic for the tabbed view, also found at CodeProject.
+  \item Daniel Veillard for the excellent, high performance and small memory footprint
+    XML (libxml) parser and XSLT (libxslt)\footnote{\url{http://www.xmlsoft.org/}}
+    for the XSL transformation (developed for the Gnome project, ported to Win32
+    by Igor Zlatkovic).
+  \item Regular expressions library is Copyright \copyright{} 1993 by the Free
+    Software Foundation. Iconv is also Copyright \copyright{} 2000--2002 by the
+    Free Software Foundation.
+  \item The YAZ library, from Index Data\footnote{\url{http://www.indexdata.dk/}},
+    implements the Z39.50 protocoll. The YAZ library was recompiled by me, so the
+    entire program does not depend on different VC runtime libraries.
+  \item Karl Runmo for his cool HTML viewer used for the preview pane, found at
+    either CodeProject or CodeGuru\footnote{\url{http://www.codeguru.com/}}, I'm
+    not sure.
+  \item A. Thiede for the anchoring controls on resizeable dialogs.
+  \item Deepak Khajuria for the Toolbar customization.
+  \item Lee Nowotny for the CListCtrl with editable subitems.
+  \item Paul DiLascia for the new file dialogs on Windows~2000 and XP. If it was
+    not written by him, I don't know who wrote it.
+  \item Nullsoft Scriptable Install System\footnote{\url{http://nsis.sourceforge.net/}}
+    is used to compile the setup program.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% end of text
+
+% You can use different bibliography styles, we use the default style `plain'.
+\bibliographystyle{plain}
+% Here will be the bibliography, `bibedt' is the filename of the database
+% without file extension
+\bibliography{bibedt}
+
+\end{document}

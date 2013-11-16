@@ -1,0 +1,80 @@
+================================================================================
+BibEdt building instructions
+Copyright (C) 2005-2006, Stefan Ascher <stievie[at]users[dot]sourceforge[dot]net>
+http://bibedt.sourceforge.net/
+================================================================================
+
+--------------------------------------------------------------------------------
+Contents
+--------------------------------------------------------------------------------
+
+  1 Introduction
+  2 Obtaining the source
+  3 Requirements
+  4 Compiling
+
+--------------------------------------------------------------------------------
+1 Introduction
+--------------------------------------------------------------------------------
+
+Here are some notes on how to build BibEdt from source. I've used MS Visual C++ 6
+to write and build this program. It uses MFC as shared library. It could be that
+it compiles with later versions as well. I do not have later version of VC++, I
+just heared that V. 7 is more strict than V. 6, so later versions could be a problem.
+Supplied with the source is a MS VC++ 6 Workspace and a Project file. There is
+also a batch file (0build.bat) you could use instead.
+
+--------------------------------------------------------------------------------
+2 Obtaining the source
+--------------------------------------------------------------------------------
+
+There are two ways to obtain the sourcecode of BibEdt:
+  1 Download the source distribution from a SourceForge mirror. Unzip the source
+    package /preserving/ the directory structure to a directory of your choice.
+  2 Download the sources via anonymous CVS (see http://sourceforge.net/cvs/?group_id=142263
+    for instructions and http://bibedt.cvs.sourceforge.net/bibedt to browse
+    the repository online), if you want to have the brand new sources - which could
+    be buggy.
+
+--------------------------------------------------------------------------------
+3 Requirements
+--------------------------------------------------------------------------------
+
+The program has now some dependencies to other libraries. These are:
+  1 Scintilla: Get the source from http://www.scintilla.org/.
+  3 YAZ: There is a binary distribution of YAZ for Win32. If you don't want to 
+    recompile YAZ this will do. YAZ++ is not needed, I've written a C++ wrapper
+    myself.
+  4 libxml2, libxslt, iconv, zlib: You can download a Win32 port in binary form
+    (that is enought, you don't need the source of these) at http://www.zlatkovic.com/libxml.en.html.
+    BibEdt does not use zlib or iconv, but libxml does. The source of these libraries
+    may be downloaded from their respective homepage.
+  
+After you've downloaded the required libraries you must update the Include and
+Library Path, so VC can find the header files and libs. Here is my coinfiguration:
+Include:
+  ..\scintilla\scintilla\include,lexbib,regex,..\yaz\include,..\libxml2\include,..\iconv\include,..\libxslt\include
+Libraries (the first, `Release' or `Debug', is needed to find regex.lib):
+  Release,..\yaz\lib,..\libxml2\lib,..\iconv\lib,..\libxslt\lib
+
+To build YAZ see {yazpath}\win\makefile for instructions. You must also modifiy
+the makefile according your installation.
+
+--------------------------------------------------------------------------------
+4 Compiling
+--------------------------------------------------------------------------------
+
+Compiling Scintilla is easy, just open SciLexer.dsw ({scintillapath}\scintilla\vcbuild)
+in VS and click the Build button.
+
+If you've modified the YAZ makefile go to {yazpath}\win open a DOS prompt in this
+directory an type nmake. Maybe you must type before vcvars32.bat. This method
+assumes that your VC bin directory is in your PATH environment. Recompiling YAZ
+is only necessary if you compile BibEdt with a different version of VC++ and you
+don't want to depend on different versions of the VC runtime libraries.
+
+Compiling BibEdt is as easy as Scintilla, just open bibedt.dws in VS and click
+Build.
+
+================================================================================
+$Id: building.txt,v 1.11 2006/05/23 20:35:30 stievie Exp $

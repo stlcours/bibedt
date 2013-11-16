@@ -1,0 +1,289 @@
+% $Id: config.bib,v 1.11 2006/07/30 17:44:57 stievie Exp $
+
+% BibEdt configuration file.
+% Delete this file to get back the original.
+
+% Stuff to consider:
+% ------------------
+
+% The name of an item must always be the same as the type, example:
+%   ----------8<----------
+%   @ARTICLE{somename,
+%     author={R},
+%     ...
+%     number={O}
+%   }
+%   ----------8<----------
+% does NOT work, it should be:
+%   ----------8<----------
+%   @ARTICLE{article,
+%     author={R},
+%     ...
+%     number={O}
+%   }
+%   ----------8<----------
+
+% The first record is always the default type of Record->Add. You may rearrange
+% them to make another type the default.
+
+% You may add/remove any number of fields of a item type as long as they are
+% unique.
+
+% You may add/remove any number of records as long as they are unique. In case you
+% never need a certain type you can remove it. If you need a type not listed here
+% you should add it.
+
+% The value consits of at maximum four parts separated by a comma:
+%   1. How is the field handled:
+%     R: Required
+%     O: Optional
+%     I: Ignored
+%   2. The order in which the fields are exported and printed. 1 is the first
+%     field, 2 the second and so on.
+%   3. How to format the value, %s is the value itself. The format string must
+%     be enclosed in curly brackets.
+%   4. The font style for export:
+%     b: bold
+%     i: italic (emphasised)
+%     u: underline
+%     s: strike out
+%     A combination is allowed, e.g. `bi' would be bold and italic. If there is
+%     no such value the default font style is used.
+% Example:
+%   ----------8<----------
+%   @article{article,
+%     author={R,1,{%s }},
+%     title={R,3,{%s. },i},
+%     ...
+%   }
+%   ----------8<----------
+% In this case the author field is a required field (`R'). It is the first field
+% to be exported or printed (`1') and the format is `Foo Bar ' (`%s ') (notice
+% the space at the end). The title would be the third part exported and it would
+% be italic.
+
+% All @string macros and @preamble items in this file are automatically added to
+% all new files created with BibEdt.
+
+% A filter item in this file, like:
+%   ----------8<----------
+%   @comment{__filter__,
+%     Psychologie={Cathegory=Psychologie},
+%     Foo={Cathegory=Bar}
+%   }
+%   ----------8<----------
+% is automatically appended to filter defined in a file.
+
+
+% Don't hesitate to modify this file to fit your needs!
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BibEdt specific options. This record is ignored.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@options{options,
+  % Print/export [number]
+  print_number={true},
+  % Format of number %d = the number
+  number_format={[%d] },
+  
+  % By default BibEdt converts special characters to TeX escape sequences. You
+  % can turn it off for certain fields. The syntax is:
+  %   convert_<fieldname>={true | false}
+  % 1. convert_ Prefix to the field name
+  % 2. <fieldname> The name of the field, e.g. url
+  % 3. true | false: true...do convert or false...don't convert
+  % Bellow are some useful settings
+  % Don't convert the url field
+  convert_url={false},
+  % Don't convert the local-url field
+  convert_local-url={false},
+  % Some other fields that may contain filenames or URLs
+  convert_pdf={false},
+  convert_ps={false},
+  convert_doi={false}
+  % If you have other fields which contains only filenames you should add them.
+  % ...
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bellow are all types BibEdt knows.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@article{Article,
+  author={R,1,{%s }},
+  year={R,2,{(%s): }},
+  title={R,3,{%s. },i},
+  abstract={I},
+  journal={R,4,{In: %s }},
+  volume={O,5,{Vol. %s },b},
+  pages={R,7,{pp. %s.}},
+  month={O},
+  number={O,6,{(%s) }},
+  keywords={I}
+}
+
+@book{Book,
+  author={R,1,{%s }},
+  title={R,3,{%s. },i},
+  year={R,2,{(%s): }},
+  abstract={I},
+  publisher={R,5,{%s. }},
+  volume={O,4,{Vol. %s. }},
+  editor={O},
+  address={O,6,{%s.}},
+  series={O},
+  edition={O},
+  month={O},
+  keywords={I}
+}
+
+@techreport{TechReport,
+  author={R,1,{%s }},
+  title={R,3,{%s. },i},
+  year={R,2,{(%s): }},
+  abstract={I},
+  institution={R,4,{%s. }},
+  month={O},
+  type={O},
+  address={O,5,{%s.}},
+  number={O}
+}
+
+@inbook{InBook,
+  author={R,1,{%s }},
+  title={R,3,{%s. },i},
+  year={R,2,{(%s): }},
+  editor={O,4,{In: %s (Edt.): }},
+  booktitle={O,5,{%s. }},
+  abstract={I},
+  chapter={R,6,{Chapter %s. }},
+  pages={R,7,{pp. %s. }},
+  publisher={R,8,{%s. }},
+  volume={O},
+  month={O},
+  series={O},
+  edition={O},
+  address={O,9,{%s.}},
+  keywords={I}
+}
+
+@inproceedings{InProceedings,
+  author={R,1,{%s }},
+  year={R,2,{(%s): }},
+  title={R,3,{%s. },i},
+  abstract={I},
+  booktitle={R,5,{%s. }},
+  month={R},
+  publisher={O,7,{%s. }},
+  address={O,8,{%s.}},
+  editor={O,4,{In: %s: }},
+  pages={O,6,{pp. %s }},
+  organization={O},
+  keywords={I}
+}
+
+@proceedings{Proceedings,
+  editor={O,1,{%s }},
+  title={R,3,{%s. },i},
+  abstract={I},
+  publisher={O},
+  year={R,2,{(%s): }},
+  month={O},
+  organization={O,4,{%s. }},
+  address={O,5,{%s.}},
+  keywords={I}
+}
+
+@incollection{InCollection,
+  author={R,1,{%s }},
+  title={R,3,{%s. },i},
+  abstract={I},
+  booktitle={R,5,{In: %s. }},
+  publisher={R,6,{%s. }},
+  year={R,2,{(%s): }},
+  month={O},
+  address={O,7,{%s.}},
+  editor={O,4,{In: %s (Edt.): }},
+  chapter={O},
+  pages={O},
+  keywords={I}
+}
+
+@unpublished{Unpublished,
+  author={R,1,{%s }},
+  title={R,3,{%s. },i},
+  abstract={I},
+  note={R,4,{Note: %s}},
+  year={O,2,{(%s): }},
+  month={O},
+  keywords={I}
+}
+
+@phdthesis{PhDThesis,
+  author={R,1,{%s }},
+  title={R,3,{%s. },i},
+  abstract={I},
+  school={R,4,{%s. }},
+  year={R,2,{(%s): }},
+  month={O},
+  address={O,5,{%s.}},
+  type={O},
+  keywords={I}
+}
+
+@mastersthesis{MastersThesis,
+  author={R,1,{%s }},
+  title={R,3,{%s. },i},
+  abstract={I},
+  school={R,4,{%s. }},
+  year={R,2,{(%s): }},
+  month={O},
+  address={O,5,{%s.}},
+  type={O},
+  keywords={I}
+}
+
+@manual{Manual,
+  author={O,1,{%s }},
+  title={R,3,{%s },i},
+  abstract={I},
+  organization={O,4,{%s. }},
+  year={O,2,{(%s): }},
+  month={O},
+  edition={O},
+  address={O,5,{%s.}},
+  keywords={I}
+}
+
+@booklet{Booklet,
+  author={O,1,{%s }},
+  title={R,3,{%s },i},
+  abstract={I},
+  howpublished={O,4,{- %s }},
+  year={O,2,{(%s): }},
+  month={O},
+  address={O,5,{%s.}},
+  keywords={I}
+}
+
+@misc{Misc,
+  author={O,1,{%s }},
+  title={O,3,{%s },i},
+  abstract={I},
+  year={O,2,{(%s): }},
+  month={O},
+  howpublished={O,4,{%s.}},
+  keywords={I}
+}
+
+
+@address{Address,
+  name={R,1,{%s: },b},
+  address={R,2,{%s }},
+  city={O,3,{%s }},
+  tel={O,4,{Tel.: %s. }},
+  mobile={O,5,{Mobil: %s. }},
+  email={O,6,{Email: %s. }},
+  keywords={I}
+}

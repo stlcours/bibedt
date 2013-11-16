@@ -1,0 +1,1856 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEU)
+#ifdef _WIN32
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\bibedt.ico"
+IDR_BIBEDTTYPE          ICON    DISCARDABLE     "res\\Book01a.ico"
+IDI_ICON_ONLINESEARCH   ICON    DISCARDABLE     "res\\osearch.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP_REQUIRED     BITMAP  DISCARDABLE     "res\\bitmap_r.bmp"
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+IDB_BITMAP_ITEMS        BITMAP  DISCARDABLE     "res\\bitmap_i.bmp"
+IDB_BITMAP_HEADER_SORT  BITMAP  DISCARDABLE     "res\\header_sort.bmp"
+IDB_BITMAP_LISTVIEW     BITMAP  DISCARDABLE     "res\\listview.bmp"
+IDR_TOOLBAR_RECORD      BITMAP  DISCARDABLE     "res\\toolbar_rec.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// ENCODING
+//
+
+TEX                     ENCODING DISCARDABLE    "res\\enc_tex.txt"
+HTML                    ENCODING DISCARDABLE    "res\\enc_html.txt"
+RTF                     ENCODING DISCARDABLE    "res\\enc_rtf.txt"
+XML                     ENCODING DISCARDABLE    "res\\enc_xml.txt"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 24
+//
+
+1                       24      MOVEABLE PURE   "res\\bibedt.exe.manifest"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_FILE_PRINT
+    BUTTON      ID_FILE_PRINT_PREVIEW
+    SEPARATOR
+    BUTTON      ID_SEARCH_FIND
+    BUTTON      ID_SEARCH_REPLACE
+    SEPARATOR
+    BUTTON      ID_EDIT_UNDO
+    BUTTON      ID_EDIT_REDO
+    SEPARATOR
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_RECORD_GENERATEKEY
+    BUTTON      ID_RECORD_COPYKEY
+    BUTTON      ID_RECORD_INSERTKEY
+    SEPARATOR
+    BUTTON      ID_RECORD_ADD
+    BUTTON      ID_RECORD_REMOVE
+    SEPARATOR
+    BUTTON      ID_RECORD_FIRST
+    BUTTON      ID_RECORD_PREVIOUS
+    BUTTON      ID_RECORD_NEXT
+    BUTTON      ID_RECORD_LAST
+    SEPARATOR
+    BUTTON      ID_RECORD_SORTED
+END
+
+IDR_TOOLBAR_RECORD TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_RECORD_ADD
+    BUTTON      ID_RECORD_REMOVE
+    SEPARATOR
+    BUTTON      ID_RECORD_FIRST
+    BUTTON      ID_RECORD_PREVIOUS
+    BUTTON      ID_RECORD_NEXT
+    BUTTON      ID_RECORD_LAST
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "1",            ID_VIEW_LISTVIEW,       VIRTKEY, CONTROL, NOINVERT
+    "2",            ID_VIEW_SOURCEVIEW,     VIRTKEY, CONTROL, NOINVERT
+    "3",            ID_VIEW_RECORD,         VIRTKEY, CONTROL, NOINVERT
+    "A",            ID_EDIT_SELECT_ALL,     VIRTKEY, CONTROL, NOINVERT
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "C",            ID_EDIT_COPYCITATION,   VIRTKEY, SHIFT, CONTROL, 
+                                                    NOINVERT
+    "E",            ID_SOURCEVIEW_EDITITEM, VIRTKEY, CONTROL, NOINVERT
+    "F",            ID_SEARCH_FIND,         VIRTKEY, CONTROL, NOINVERT
+    "G",            ID_RECORD_GENERATEKEY,  VIRTKEY, CONTROL, NOINVERT
+    "H",            ID_SEARCH_REPLACE,      VIRTKEY, CONTROL, NOINVERT
+    "I",            ID_RECORD_INSERTKEY,    VIRTKEY, CONTROL, NOINVERT
+    "K",            ID_EDIT_COPYKEY,        VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    "T",            ID_VIEW_TOGGLEQUICKSEARCH, VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    VK_DELETE,      ID_RECORD_REMOVE,       VIRTKEY, CONTROL, NOINVERT
+    VK_DOWN,        ID_RECORD_NEXT,         VIRTKEY, ALT, NOINVERT
+    VK_DOWN,        ID_RECORD_LAST,         VIRTKEY, CONTROL, ALT, NOINVERT
+    VK_F1,          ID_HELP_MANUAL,         VIRTKEY, NOINVERT
+    VK_F2,          ID_SEARCH_NEXTBOOKMARK, VIRTKEY, NOINVERT
+    VK_F2,          ID_SEARCH_TOGGLEBOOKMARK, VIRTKEY, CONTROL, NOINVERT
+    VK_F2,          ID_SEARCH_PREVIOUSBOOKMARK, VIRTKEY, SHIFT, NOINVERT
+    VK_F2,          ID_SEARCH_CLEARBOOKMARKS, VIRTKEY, SHIFT, CONTROL, 
+                                                    NOINVERT
+    VK_F3,          ID_SEARCH_FINDNEXT,     VIRTKEY, NOINVERT
+    VK_F4,          ID_SEARCH_GOTORECORD,   VIRTKEY, NOINVERT
+    VK_INSERT,      ID_RECORD_ADD,          VIRTKEY, CONTROL, NOINVERT
+    VK_RETURN,      ID_RECORD_EDIT,         VIRTKEY, CONTROL, NOINVERT
+    VK_RETURN,      ID_RECORD_SOURCE,       VIRTKEY, SHIFT, NOINVERT
+    VK_UP,          ID_RECORD_PREVIOUS,     VIRTKEY, ALT, NOINVERT
+    VK_UP,          ID_RECORD_FIRST,        VIRTKEY, CONTROL, ALT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "Y",            ID_EDIT_REDO,           VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG_FINDDUPLOP DIALOG DISCARDABLE  0, 0, 236, 82
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Find duplicates"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "&Field(s) to search:",IDC_STATIC,7,7,56,8
+    COMBOBOX        IDC_COMBO_FIELDS,7,16,166,58,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "&Exact",IDC_CHECK_EXACT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,53,222,10
+    CONTROL         "&Case sensitive",IDC_CHECK_CASESENS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,65,222,10
+    DEFPUSHBUTTON   "Find",IDOK,179,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,179,24,50,14
+    LTEXT           "If more fields must be the same, separate them with a semocolon (;). Example: author;title",
+                    IDC_STATIC,7,30,165,18
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_DIALOG_FINDDUPLOP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 229
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 75
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CURSOR_LINKHAND     CURSOR  DISCARDABLE     "res\\linkhand.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// BIB
+//
+
+BIB_DEF                 BIB     DISCARDABLE     "res\\config.bib"
+#endif    // Neutral resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Englisch (USA) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_DONATE              BITMAP  DISCARDABLE     "res\\donate.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 106
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About BibEdt"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,10,9,21,20
+    LTEXT           "BibEdt",IDC_STATIC,38,9,23,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2005-2006",IDC_STATIC,38,24,102,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+    LTEXT           "Version 1.0",IDC_STATIC_VERSION,62,9,74,8
+    LTEXT           "http://bibedt.sourceforge.net/",IDC_STATIC_WEB,38,54,97,
+                    8
+    LTEXT           "Stefan Ascher",IDC_STATIC_STIEVIE,38,34,46,8
+    LTEXT           "Nils Wiese",IDC_STATIC_NILS,38,43,34,8
+    LTEXT           "This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation.",
+                    IDC_STATIC,38,74,190,25
+    CONTROL         "Donate",IDC_DONATE,"Button",BS_OWNERDRAW | BS_BITMAP | 
+                    WS_TABSTOP,178,50,50,17
+END
+
+IDD_DIALOG_STRING DIALOG DISCARDABLE  0, 0, 490, 281
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Strings"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "List1",IDC_LIST_STRINGS,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_EDITLABELS | 
+                    LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,7,7,417,136
+    PUSHBUTTON      "&Add",IDC_BUTTON_ADD,433,95,50,14
+    PUSHBUTTON      "&Edit",IDC_BUTTON_EDIT,433,112,50,14,WS_DISABLED
+    PUSHBUTTON      "&Remove",IDC_BUTTON_REMOVE,433,129,50,14,WS_DISABLED
+    CONTROL         "ScntillaCtrl",IDC_SCINCTRL,"Scintilla",WS_TABSTOP,7,150,
+                    417,124
+    PUSHBUTTON      "A&pply",IDC_BUTTON_APPLY,433,150,50,14
+    PUSHBUTTON      "&Undo",IDC_BUTTON_UNDO,433,168,50,14
+    PUSHBUTTON      "&Source...",IDC_BUTTON_SOURCE,433,47,50,14
+    DEFPUSHBUTTON   "OK",IDOK,433,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,433,24,50,14
+END
+
+IDD_DIALOG_PREAMBLE DIALOG DISCARDABLE  0, 0, 482, 286
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Preambles"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "List2",IDC_LIST_PREAMBLES,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_NOCOLUMNHEADER | 
+                    LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,7,7,409,116
+    PUSHBUTTON      "&Add",IDC_BUTTON_ADDFIELD,425,91,50,14
+    PUSHBUTTON      "&Remove",IDC_BUTTON_FIELDREMOVE,425,109,50,14,
+                    WS_DISABLED
+    CONTROL         "ScntillaCtrl",IDC_SCINCTRL,"Scintilla",WS_TABSTOP,7,131,
+                    409,148
+    PUSHBUTTON      "A&pply",IDC_BUTTON_APPLY,425,131,50,14
+    PUSHBUTTON      "&Undo",IDC_BUTTON_UNDO,425,149,50,14
+    PUSHBUTTON      "&Source...",IDC_BUTTON_SOURCE,425,48,50,14,WS_DISABLED
+    DEFPUSHBUTTON   "OK",IDOK,425,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,425,24,50,14
+END
+
+IDD_DIALOG_SEARCH DIALOG DISCARDABLE  0, 0, 272, 90
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Find item"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "&Search for:",IDC_STATIC,7,7,36,8
+    COMBOBOX        IDC_COMBO_TEXT,7,17,201,58,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "&Match case",IDC_CHECK_MATCHCASE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,38,79,10
+    CONTROL         "&Whole words only",IDC_CHECK_WHOLEWORDS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,49,86,10
+    CONTROL         "&Regular expression",IDC_CHECK_REGEX,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,61,76,10
+    CONTROL         "In s&election only",IDC_CHECK_SELONLY,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,73,77,10
+    LTEXT           "Se&arch where:",IDC_STATIC,99,38,47,8
+    COMBOBOX        IDC_COMBO_FIELDS,99,48,109,58,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    DEFPUSHBUTTON   "Find",IDOK,215,7,50,14,WS_DISABLED
+    PUSHBUTTON      "Cancel",IDCANCEL,215,42,50,14
+    PUSHBUTTON      "Mar&k all",IDC_BUTTON_SEARCH_MARKALL,215,24,50,14,
+                    WS_DISABLED
+END
+
+IDD_DIALOG_DUPLICATES DIALOG DISCARDABLE  0, 0, 500, 321
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Duplicate Items"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Tree1",IDC_TREE_ITEMS,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_SHOWSELALWAYS | 
+                    TVS_FULLROWSELECT | WS_BORDER | WS_TABSTOP,7,7,430,168
+    CONTROL         "ScntillaCtrl",IDC_SCINCTRL,"Scintilla",WS_TABSTOP,7,183,
+                    486,131
+    PUSHBUTTON      "S&elect",IDC_BUTTON_SELECT,443,31,50,14,WS_DISABLED
+    PUSHBUTTON      "&Bookmark",IDC_BUTTON_BOOKMARK,443,49,50,14,WS_DISABLED
+    DEFPUSHBUTTON   "Close",IDOK,443,7,50,14
+END
+
+IDD_DIALOG_PROGRESS DIALOG DISCARDABLE  0, 0, 204, 74
+STYLE DS_MODALFRAME | DS_SETFOREGROUND | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "I'm a bit busy"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Cancel",IDCANCEL,76,53,50,14
+    CTEXT           "Work in progress, please hold by...",IDC_STATIC,7,15,
+                    190,8
+    CONTROL         "Progress1",IDC_PROGRESS_MAIN,"msctls_progress32",
+                    PBS_SMOOTH,7,33,190,11
+END
+
+IDD_DIALOG_COPYCITE DIALOG DISCARDABLE  0, 0, 275, 170
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Copy Citation"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Select &Key(s):",IDC_STATIC,7,7,44,8
+    LISTBOX         IDC_LIST_KEYS,7,17,203,79,LBS_SORT | LBS_MULTIPLESEL | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | 
+                    WS_TABSTOP
+    GROUPBOX        "Copy &how:",IDC_STATIC,7,101,203,62
+    CONTROL         "Key &only",IDC_RADIO_KEYONLY,"Button",
+                    BS_AUTORADIOBUTTON,14,114,43,10
+    CONTROL         "\\&cite{key}",IDC_RADIO_CITE,"Button",
+                    BS_AUTORADIOBUTTON,14,125,51,10
+    CONTROL         "\\&nocite{key}",IDC_RADIO_NOCITE,"Button",
+                    BS_AUTORADIOBUTTON,14,136,56,10
+    CONTROL         "C&ustom",IDC_RADIO_CUSTOM,"Button",BS_AUTORADIOBUTTON,
+                    14,147,39,10
+    RTEXT           "(%s = &BibTeX Key)",IDC_STATIC_CUSTOM,143,135,59,8
+    COMBOBOX        IDC_COMBO_CUSTOM,78,145,128,66,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,218,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,218,24,50,14
+END
+
+IDD_DIALOG_COLUMNS DIALOG DISCARDABLE  0, 0, 207, 103
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Columns"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_LIST_COLUMNS,7,7,135,68,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "&Add...",IDC_BUTTON_ADD,150,7,50,14
+    PUSHBUTTON      "&Remove",IDC_BUTTON_REMOVE,150,24,50,14,WS_DISABLED
+    PUSHBUTTON      "&Up",IDC_BUTTON_UP,150,44,50,14,WS_DISABLED
+    PUSHBUTTON      "&Down",IDC_BUTTON_DOWN,150,61,50,14,WS_DISABLED
+    DEFPUSHBUTTON   "OK",IDOK,52,82,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,108,82,50,14
+END
+
+IDD_DIALOG_INPUTBOX DIALOG DISCARDABLE  0, 0, 239, 45
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Prompt",IDC_STATIC_PROMPT,7,7,153,8
+    EDITTEXT        IDC_EDIT_TEXT,7,16,168,13,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,182,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,182,24,50,14
+END
+
+IDD_OPTIONSPAGE_GENERAL DIALOGEX 0, 0, 234, 188
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "General"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "O&pen last file at start",IDC_CHECK_OPENLAST,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,7,220,10
+    CONTROL         "&Create Backup copy",IDC_CHECK_BACKUP,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,17,220,10
+    CONTROL         "&Translate to ASCII",IDC_CHECK_TRANSLATE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,27,220,10
+    CONTROL         "&Sort case sensitive",IDC_CHECK_SORTCASE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,37,220,10
+    CONTROL         "S&ort before save",IDC_CHECK_SORTONSAVE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,47,220,10
+    CONTROL         "S&how Copy Citation Dialog",IDC_CHECK_SHOWCITEDLG,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,57,220,10
+    CONTROL         "&Replace special characters in Source view",
+                    IDC_CHECK_REPLSPECCHAR,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,67,220,10
+    CONTROL         "Scro&ll to selected item in Source view",
+                    IDC_CHECK_SCOLLSEL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    7,77,220,10
+    CONTROL         "&Autocomplete field values",IDC_CHECK_AUTOCOMPL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,87,220,10
+    CONTROL         "Disable Sa&ve when Document is not modified",
+                    IDC_CHECK_NOSAVE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,
+                    97,220,10
+    LTEXT           "Cite &Format:",IDC_STATIC,29,114,38,8
+    EDITTEXT        IDC_EDIT_CITEFORMAT,70,111,157,13,ES_AUTOHSCROLL
+    LTEXT           "L&ine length:",IDC_STATIC,29,127,38,8
+    EDITTEXT        IDC_EDIT_LINELENGTH,70,126,57,13,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN_LINELENGTH,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS | 
+                    UDS_NOTHOUSANDS,127,126,11,13,WS_EX_STATICEDGE
+    LTEXT           "&Quicksearch fields:",IDC_STATIC,7,143,60,8
+    EDITTEXT        IDC_EDIT_QSFIELDS,70,140,157,13,ES_AUTOHSCROLL
+    LTEXT           "Separated by ; (author;title;key;)",IDC_STATIC,70,154,
+                    101,8
+    LTEXT           "&DOI URL:",IDC_STATIC,35,171,32,8
+    EDITTEXT        IDC_EDIT_DOIURL,70,168,157,13,ES_AUTOHSCROLL
+END
+
+IDD_OPTIONSPAGE_FILES DIALOG DISCARDABLE  0, 0, 234, 178
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Directories"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "&Configuration directory:",IDC_STATIC,7,7,73,8
+    EDITTEXT        IDC_EDIT_CONFIGDIR,7,16,199,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BUTTON_CONFIGDIR_BROWSE,212,15,15,14
+    LTEXT           "May require restart of program!",IDC_STATIC,7,35,96,8
+END
+
+IDD_OPTIONSPAGE_PRINT DIALOGEX 0, 0, 181, 159
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Print"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "&Margins",IDC_STATIC,7,7,127,145
+    LTEXT           "&Units:",IDC_STATIC,15,21,19,8
+    COMBOBOX        IDC_COMBO_UNITS,15,31,111,58,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "&Left",IDC_STATIC,16,84,13,8
+    EDITTEXT        IDC_EDIT_LEFT,15,94,30,13,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN_TOP2,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,45,94,11,
+                    13,WS_EX_STATICEDGE
+    LTEXT           "&Top",IDC_STATIC,51,56,14,8
+    EDITTEXT        IDC_EDIT_TOP,51,66,30,13,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN_TOP,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,81,66,11,
+                    13,WS_EX_STATICEDGE
+    LTEXT           "&Right",IDC_STATIC,86,84,18,8
+    EDITTEXT        IDC_EDIT_RIGHT,86,94,29,13,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN_TOP3,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,115,94,
+                    11,13,WS_EX_STATICEDGE
+    LTEXT           "&Bottom",IDC_STATIC,52,113,23,8
+    EDITTEXT        IDC_EDIT_BOTTOM,51,123,30,13,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN_TOP4,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,81,123,
+                    11,13,WS_EX_STATICEDGE
+END
+
+IDD_DIALOG_SOURCE DIALOG DISCARDABLE  0, 0, 558, 247
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Source"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "ScntillaCtrl",IDC_SCINCTRL,"Scintilla",WS_TABSTOP,7,7,
+                    544,215
+    DEFPUSHBUTTON   "OK",IDOK,225,226,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,282,226,50,14
+END
+
+IDD_DIALOG_FINDTEXT DIALOG DISCARDABLE  0, 0, 240, 78
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Find Text"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "&Search for:",IDC_STATIC,7,7,36,8
+    COMBOBOX        IDC_COMBO_TEXT,7,17,169,58,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "&Match case",IDC_CHECK_MATCHCASE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,38,109,10
+    CONTROL         "&Whole words only",IDC_CHECK_WHOLEWORDS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,49,112,10
+    CONTROL         "&Regular expression",IDC_CHECK_REGEXPR,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,60,111,10
+    GROUPBOX        "Direction",IDC_STATIC,128,38,48,33
+    CONTROL         "&Up",IDC_RADIO_UP,"Button",BS_AUTORADIOBUTTON,136,48,25,
+                    10
+    CONTROL         "&Down",IDC_RADIO_DOWN,"Button",BS_AUTORADIOBUTTON,136,
+                    58,35,10
+    DEFPUSHBUTTON   "Find next",IDOK,183,7,50,14,WS_DISABLED
+    PUSHBUTTON      "Cancel",IDCANCEL,183,42,50,14
+    PUSHBUTTON      "&Mark all",IDC_BUTTON_MARK,183,24,50,14,WS_DISABLED
+END
+
+IDD_DIALOG_REPLACETEXT DIALOG DISCARDABLE  0, 0, 240, 110
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Replace Text"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "&Search for:",IDC_STATIC,7,7,36,8
+    COMBOBOX        IDC_COMBO_TEXT,7,17,169,58,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Replace &with:",IDC_STATIC,7,33,44,8
+    COMBOBOX        IDC_COMBO_REPLACETEXT,7,43,169,58,CBS_DROPDOWN | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "&Match case",IDC_CHECK_MATCHCASE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,61,79,10
+    CONTROL         "W&hole words only",IDC_CHECK_WHOLEWORDS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,72,86,10
+    CONTROL         "Regular e&xpression",IDC_CHECK_REGEXPR,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,83,77,10
+    DEFPUSHBUTTON   "Find next",ID_BUTTON_FINDNEXT,183,7,50,14,WS_DISABLED
+    PUSHBUTTON      "&Replace",IDC_BUTTON_REPLACE,183,24,50,14,WS_DISABLED
+    PUSHBUTTON      "Replace &all",IDC_BUTTON_REPLACEALL,183,42,50,14,
+                    WS_DISABLED
+    PUSHBUTTON      "Close",IDCANCEL,183,60,50,14
+    CONTROL         "Selection &only",IDC_CHECK_SELONLY,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,94,127,10
+END
+
+IDD_BIBITEMVIEW_FORM DIALOGEX 0, 0, 323, 201
+STYLE WS_CHILD
+EXSTYLE WS_EX_ACCEPTFILES
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "&Key:",IDC_STATIC,7,9,15,8
+    EDITTEXT        IDC_EDIT_KEY,27,7,122,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Generate",IDC_BUTTON_GEYGENERATE,153,6,50,14
+    LTEXT           "&Type:",IDC_STATIC,209,9,19,8
+    COMBOBOX        IDC_COMBO_TYPE,233,7,83,58,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "List1",IDC_LIST_FIELDS,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,7,27,309,123
+    LISTBOX         IDC_LIST_MISSINGFIELDS,7,157,309,37,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_DIALOGBAR_FILTER_TEMPLATE DIALOG DISCARDABLE  0, 0, 166, 16
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    COMBOBOX        IDC_COMBO_FILTER,6,1,158,127,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_DIALOG_FILTER DIALOG DISCARDABLE  0, 0, 422, 164
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Filter"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "List1",IDC_LIST_FILTERS,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_EDITLABELS | 
+                    LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,7,7,352,129
+    PUSHBUTTON      "&Add",IDC_BUTTON_ADD,365,47,50,14
+    PUSHBUTTON      "&Edit",IDC_BUTTON_EDIT,365,64,50,14,WS_DISABLED
+    PUSHBUTTON      "&Remove",IDC_BUTTON_REMOVE,365,81,50,14,WS_DISABLED
+    LTEXT           "&Field:",IDC_STATIC_FIELD,7,146,18,8
+    EDITTEXT        IDC_EDIT_FIELD,28,144,121,13,ES_AUTOHSCROLL
+    LTEXT           "&Contains:",IDC_STATIC_COND,157,146,30,8
+    EDITTEXT        IDC_EDIT_COND,191,144,168,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Up",IDC_BUTTON_UP,365,104,50,14,WS_DISABLED
+    PUSHBUTTON      "&Down",IDC_BUTTON_DOWN,365,122,50,14,WS_DISABLED
+    DEFPUSHBUTTON   "OK",IDOK,365,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,365,24,50,14
+END
+
+IDD_DIALOGBAR_QUICKSEARCH_TEMPLATE DIALOG DISCARDABLE  0, 0, 211, 16
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_EDIT_QUICKSEARCH,6,2,98,13,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO_QS_FIELD,105,2,103,127,CBS_DROPDOWN | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_DIALOG_GENFROMAUX DIALOG DISCARDABLE  0, 0, 350, 214
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Generate from auxiliary file"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Top level &auxiliary file:",IDC_STATIC,7,7,70,8
+    EDITTEXT        IDC_EDIT_AUXFILE,7,16,279,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Browse...",IDC_BUTTON_AUXBROWSE,293,15,50,14
+    LTEXT           "&Target file:",IDC_STATIC,7,31,34,8
+    EDITTEXT        IDC_EDIT_TARGETFILE,7,40,279,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "B&rowse...",IDC_BUTTON_TARGETBROWSE,293,39,50,14
+    CONTROL         "&Only required and optional fields",IDC_CHECK_REQFIELDS,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,57,279,10
+    DEFPUSHBUTTON   "Generate",ID_BUTTON_GENERATE,122,193,50,14,WS_DISABLED
+    PUSHBUTTON      "Close",IDCANCEL,177,193,50,14
+    LTEXT           "Log:",IDC_STATIC,7,76,15,8
+    EDITTEXT        IDC_EDIT_LOG,7,86,336,103,ES_MULTILINE | ES_AUTOHSCROLL | 
+                    ES_READONLY | WS_VSCROLL | WS_HSCROLL | NOT WS_TABSTOP
+END
+
+IDD_DIALOG_KEYS DIALOG DISCARDABLE  0, 0, 315, 220
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Keys"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_LIST_KEYS,7,7,244,158,LBS_USETABSTOPS | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | 
+                    WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,258,7,50,14,WS_DISABLED
+    PUSHBUTTON      "Cancel",IDCANCEL,258,24,50,14
+    EDITTEXT        IDC_EDIT_PREVIEW,7,172,301,41,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_READONLY | WS_VSCROLL | NOT 
+                    WS_TABSTOP
+END
+
+IDD_DIALOG_ONLINESEARCH DIALOGEX 0, 0, 394, 318
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Online search"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "&Profile:",IDC_STATIC,7,7,22,8
+    COMBOBOX        IDC_COMBO_PROFILES,7,16,236,127,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "N&ew...",IDC_BUTTON_NEWPROFILE,248,16,39,14
+    PUSHBUTTON      "Ed&it...",IDC_BUTTON_EDITPROFILE,291,16,39,14
+    GROUPBOX        "Server",IDC_STATIC_SERVER,7,37,156,64
+    LTEXT           "&Host name or IP address:",IDC_STATIC_HOST,14,48,80,8
+    EDITTEXT        IDC_EDIT_HOST,14,57,96,12,ES_AUTOHSCROLL
+    LTEXT           "Po&rt:",IDC_STATIC_PORT,115,48,16,8
+    EDITTEXT        IDC_EDIT_PORT,115,57,29,12,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN_PORT,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,145,57,
+                    11,12,WS_EX_STATICEDGE
+    LTEXT           "Pro&xy:",IDC_STATIC_PROXY,14,72,20,8
+    EDITTEXT        IDC_EDIT_PROXY,14,82,142,12,ES_AUTOHSCROLL
+    GROUPBOX        "User",IDC_STATIC_USER,169,37,161,64
+    LTEXT           "&Username:",IDC_STATIC_USERNAME,176,48,35,8
+    EDITTEXT        IDC_EDIT_USER,176,57,73,13,ES_AUTOHSCROLL
+    LTEXT           "&Group:",IDC_STATIC_GROUP,254,48,22,8
+    EDITTEXT        IDC_EDIT_GROUP,254,57,70,13,ES_AUTOHSCROLL
+    LTEXT           "Pass&word:",IDC_STATIC_PASS,176,73,34,8
+    EDITTEXT        IDC_EDIT_PASS,176,82,73,12,ES_PASSWORD | ES_AUTOHSCROLL
+    CONTROL         "Save Pasw&ord",IDC_CHECK_SAVEPASS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,255,83,62,10
+    GROUPBOX        "Search",IDC_STATIC_SEARCH,7,106,323,66
+    LTEXT           "&Database(s):",IDC_STATIC_DATABASE,20,121,41,8
+    EDITTEXT        IDC_EDIT_DATABASE,62,119,172,13,ES_AUTOHSCROLL
+    LTEXT           "Search &Query:",IDC_STATIC_QUERY,14,137,46,8
+    EDITTEXT        IDC_EDIT_SEARCHFOR,62,136,172,31,ES_MULTILINE | 
+                    WS_VSCROLL
+    LTEXT           "&Show from:",IDC_STATIC_RECSTART,240,121,36,8
+    EDITTEXT        IDC_EDIT_RECSTART,277,119,36,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN_RECSTART,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS | 
+                    UDS_NOTHOUSANDS,313,119,11,12,WS_EX_STATICEDGE
+    LTEXT           "&to:",IDC_STATIC_RECEND,266,137,9,8
+    EDITTEXT        IDC_EDIT_RECEND,277,136,36,12,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN_RECEND,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS | 
+                    UDS_NOTHOUSANDS,313,136,11,12,WS_EX_STATICEDGE
+    PUSHBUTTON      "&Next",IDC_BUTTON_NEXT,278,152,46,14
+    GROUPBOX        "Query type",IDC_STATIC_QT,337,106,50,43
+    CONTROL         "Pre&fix",IDC_RADIO_QT_PREFIX,"Button",
+                    BS_AUTORADIOBUTTON,344,117,33,10
+    CONTROL         "CQ&L",IDC_RADIO_QT_CQL,"Button",BS_AUTORADIOBUTTON,344,
+                    126,30,10
+    CONTROL         "&CCL",IDC_RADIO_QT_CCL,"Button",BS_AUTORADIOBUTTON | 
+                    WS_DISABLED,344,136,29,10
+    LTEXT           "Results:",IDC_STATIC_RESULTS,7,175,124,8
+    CONTROL         "List1",IDC_LIST_RESULTS,"SysListView32",LVS_REPORT | 
+                    LVS_SHOWSELALWAYS | LVS_NOSORTHEADER | WS_BORDER | 
+                    WS_TABSTOP,7,186,380,125
+    PUSHBUTTON      "I&mport",IDC_BUTTON_IMPORT,337,157,50,14,WS_DISABLED
+    DEFPUSHBUTTON   "Search",ID_SEARCH,337,7,50,14
+    PUSHBUTTON      "Close",ID_CLOSE,337,24,50,14
+    EDITTEXT        IDC_EDIT_RAW,7,186,380,125,ES_MULTILINE | ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_VISIBLE | WS_VSCROLL
+    PUSHBUTTON      "Help",IDC_BUTTON_HELP,337,42,50,14
+END
+
+IDD_DIALOG_EDITSEARCHPROFILES DIALOG DISCARDABLE  0, 0, 260, 125
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Search profiles"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_LIST_PROFILES,7,7,189,91,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "&Add...",IDC_BUTTON_ADD,203,7,50,14
+    PUSHBUTTON      "Re&name...",IDC_BUTTON_RENAME,203,24,50,14,WS_DISABLED
+    PUSHBUTTON      "&Remove",IDC_BUTTON_REMOVE,203,41,50,14,WS_DISABLED
+    PUSHBUTTON      "&Up",IDC_BUTTON_UP,203,67,50,14,WS_DISABLED
+    PUSHBUTTON      "&Down",IDC_BUTTON_DOWN,203,84,50,14,WS_DISABLED
+    DEFPUSHBUTTON   "OK",IDOK,76,104,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,132,104,50,14
+END
+
+IDD_DIALOG_APPLYFILTER DIALOG DISCARDABLE  0, 0, 254, 132
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Apply Filter"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_LIST_FILTER,7,7,183,118,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,197,7,50,14,WS_DISABLED
+    PUSHBUTTON      "Cancel",IDCANCEL,197,24,50,14
+END
+
+IDD_OPTIONSPAGE_EXPORTER DIALOG DISCARDABLE  0, 0, 233, 188
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Exporter"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_LIST_EXPORTER,7,7,163,102,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "&Add...",IDC_BUTTON_EXPORTER_ADD,176,7,50,14
+    PUSHBUTTON      "&Rename...",IDC_BUTTON_EXPORTER_RENAME,176,25,50,14
+    PUSHBUTTON      "Re&move",IDC_BUTTON_EXPORTER_REMOVE,176,43,50,14
+    LTEXT           "XSL &Style file:",IDC_STATIC,7,111,44,8
+    EDITTEXT        IDC_EDIT_STYLEFILE,7,120,199,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BUTTON_BROWSE_STYLE,211,119,15,14
+    LTEXT           "&Encoding:",IDC_STATIC,7,136,33,8
+    LTEXT           "E&xtension:",IDC_STATIC,7,160,34,8
+    EDITTEXT        IDC_EDIT_EXTENSION,7,169,40,12,ES_AUTOHSCROLL
+    LTEXT           "&Filter (e.g. HTML Files (*.html)|*.html):",IDC_STATIC,
+                    54,160,116,8
+    EDITTEXT        IDC_EDIT_FILTER,54,169,172,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO_ENCODING,7,145,219,58,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_EXPORT_FILTER DIALOG DISCARDABLE  0, 0, 371, 95
+STYLE DS_3DLOOK | DS_CONTROL | WS_CHILD | WS_VISIBLE | WS_CLIPSIBLINGS
+FONT 8, "MS Shell Dlg"
+BEGIN
+    LISTBOX         IDC_LIST_EXPORTER,7,7,357,81,LBS_MULTIPLESEL | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_OPTIONSPAGE_DEFEDITOR DIALOG DISCARDABLE  0, 0, 233, 154
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Editor"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Your default LaTeX Editor, see the manual section Configuration.",
+                    IDC_STATIC,15,6,204,8
+    GROUPBOX        "&Class names",IDC_STATIC,7,23,219,70
+    LTEXT           "&Top-level window:",IDC_STATIC,15,36,58,8
+    EDITTEXT        IDC_EDIT_TLCLASS,15,46,203,12,ES_AUTOHSCROLL
+    LTEXT           "C&hild window:",IDC_STATIC,15,63,44,8
+    EDITTEXT        IDC_EDIT_CHCLASS,15,73,203,12,ES_AUTOHSCROLL
+END
+
+IDD_OPTIONSPAGE_LANGUAGE DIALOG DISCARDABLE  0, 0, 234, 154
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Language"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "&Language:",IDC_STATIC,6,7,35,8
+    COMBOBOX        IDC_COMBO_LANGS,6,16,144,58,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_OPTIONSPAGE_PREVIEW DIALOG DISCARDABLE  0, 0, 234, 154
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Preview"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Font",IDC_STATIC,6,6,221,62
+    LTEXT           "&Proportional:",IDC_STATIC,13,20,40,8
+    COMBOBOX        IDC_COMBO_FNT_PROP,57,17,164,103,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "&Monospace:",IDC_STATIC,13,37,40,8
+    COMBOBOX        IDC_COMBO_FNT_MONO,57,34,164,79,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "&Sans-serif:",IDC_STATIC,19,53,34,8
+    COMBOBOX        IDC_COMBO_FNT_SANS,57,50,164,81,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_DIALOG_VALUELIST DIALOG DISCARDABLE  0, 0, 408, 270
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Value list"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "&Field:",IDC_STATIC,7,9,18,8
+    COMBOBOX        IDC_COMBO_FIELD,29,7,315,118,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "&Refresh",IDOK,351,7,50,14
+    CONTROL         "List1",IDC_LIST_VALUES,"SysListView32",LVS_REPORT | 
+                    LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,7,28,394,235
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        VERTGUIDE, 13
+        VERTGUIDE, 38
+        VERTGUIDE, 140
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 99
+    END
+
+    IDD_DIALOG_STRING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 483
+        VERTGUIDE, 424
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 274
+    END
+
+    IDD_DIALOG_PREAMBLE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 475
+        VERTGUIDE, 241
+        VERTGUIDE, 416
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 279
+    END
+
+    IDD_DIALOG_SEARCH, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 265
+        VERTGUIDE, 208
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 83
+        HORZGUIDE, 38
+    END
+
+    IDD_DIALOG_DUPLICATES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 493
+        VERTGUIDE, 437
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 314
+    END
+
+    IDD_DIALOG_PROGRESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 197
+        VERTGUIDE, 101
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 67
+    END
+
+    IDD_DIALOG_COPYCITE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 268
+        VERTGUIDE, 18
+        VERTGUIDE, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 163
+    END
+
+    IDD_DIALOG_COLUMNS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 200
+        VERTGUIDE, 105
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 96
+    END
+
+    IDD_DIALOG_INPUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 232
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 38
+    END
+
+    IDD_OPTIONSPAGE_GENERAL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 227
+        VERTGUIDE, 67
+        VERTGUIDE, 70
+        VERTGUIDE, 116
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 181
+    END
+
+    IDD_OPTIONSPAGE_FILES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 227
+        VERTGUIDE, 206
+        VERTGUIDE, 212
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 171
+    END
+
+    IDD_OPTIONSPAGE_PRINT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 174
+        VERTGUIDE, 15
+        VERTGUIDE, 71
+        VERTGUIDE, 126
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 152
+        HORZGUIDE, 94
+    END
+
+    IDD_DIALOG_SOURCE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 551
+        VERTGUIDE, 278
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 240
+    END
+
+    IDD_DIALOG_FINDTEXT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 233
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 71
+    END
+
+    IDD_DIALOG_REPLACETEXT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 233
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 103
+    END
+
+    IDD_BIBITEMVIEW_FORM, DIALOG
+    BEGIN
+        VERTGUIDE, 7
+        VERTGUIDE, 316
+        HORZGUIDE, 7
+        HORZGUIDE, 194
+    END
+
+    IDD_DIALOGBAR_FILTER_TEMPLATE, DIALOG
+    BEGIN
+        VERTGUIDE, 6
+        BOTTOMMARGIN, 15
+    END
+
+    IDD_DIALOG_FILTER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 415
+        VERTGUIDE, 359
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 157
+    END
+
+    IDD_DIALOGBAR_QUICKSEARCH_TEMPLATE, DIALOG
+    BEGIN
+        RIGHTMARGIN, 209
+    END
+
+    IDD_DIALOG_GENFROMAUX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 343
+        VERTGUIDE, 175
+        VERTGUIDE, 286
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 207
+    END
+
+    IDD_DIALOG_KEYS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 308
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 213
+    END
+
+    IDD_DIALOG_ONLINESEARCH, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 387
+        VERTGUIDE, 14
+        VERTGUIDE, 62
+        VERTGUIDE, 156
+        VERTGUIDE, 176
+        VERTGUIDE, 324
+        VERTGUIDE, 330
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 311
+        HORZGUIDE, 37
+        HORZGUIDE, 57
+        HORZGUIDE, 82
+        HORZGUIDE, 101
+        HORZGUIDE, 171
+    END
+
+    IDD_DIALOG_EDITSEARCHPROFILES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 118
+    END
+
+    IDD_DIALOG_APPLYFILTER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 247
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 125
+    END
+
+    IDD_OPTIONSPAGE_EXPORTER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 226
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 181
+    END
+
+    IDD_EXPORT_FILTER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 364
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+
+    IDD_OPTIONSPAGE_DEFEDITOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 226
+        VERTGUIDE, 15
+        VERTGUIDE, 218
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 147
+    END
+
+    IDD_OPTIONSPAGE_LANGUAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+    END
+
+    IDD_OPTIONSPAGE_PREVIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 227
+        VERTGUIDE, 53
+        VERTGUIDE, 57
+        VERTGUIDE, 221
+        TOPMARGIN, 6
+    END
+
+    IDD_DIALOG_VALUELIST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 401
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 263
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "&Import...",                  ID_FILE_IMPORT
+        MENUITEM "&Export...",                  ID_FILE_EXPORT
+        MENUITEM SEPARATOR
+        MENUITEM "&Print...\tCtrl+P",           ID_FILE_PRINT
+        MENUITEM "Print Pre&view",              ID_FILE_PRINT_PREVIEW
+        MENUITEM "P&rint Setup...",             ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit\tAlt+F4",               ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "Undo\tCtrl+Z",                ID_EDIT_UNDO
+        MENUITEM "Redo\tCtrl+Y",                ID_EDIT_REDO
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t\tCtrl+X",                ID_EDIT_CUT
+        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY
+        MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE
+        MENUITEM "&Delete\tDel",                ID_EDIT_DELETE
+        MENUITEM SEPARATOR
+        MENUITEM "Select &all\tCtrl+A",         ID_EDIT_SELECT_ALL
+        MENUITEM "C&opy Citation...\tShift+Ctrl+C", ID_EDIT_COPYCITATION
+        MENUITEM SEPARATOR
+        MENUITEM "P&reamble...",                ID_EDIT_PREAMBLE
+        MENUITEM "&Strings...",                 ID_EDIT_STRINGS
+        MENUITEM SEPARATOR
+        MENUITEM "&Modified",                   ID_EDIT_MODIFIED
+    END
+    POPUP "&Record"
+    BEGIN
+        MENUITEM "&Add...\tCtrl+Ins",           ID_RECORD_ADD
+        MENUITEM "&Edit...\tCtrl+Enter",        ID_RECORD_EDIT
+        MENUITEM "&Remove\tCtrl+Del",           ID_RECORD_REMOVE
+        MENUITEM SEPARATOR
+        MENUITEM "&Generate Key\tCtrl+G",       ID_RECORD_GENERATEKEY
+        MENUITEM "Copy &Key\tCtrl+K",           ID_RECORD_COPYKEY
+        MENUITEM "&Insert Key\tCtrl+I",         ID_RECORD_INSERTKEY
+        MENUITEM "S&ource...\tShift+Enter",     ID_RECORD_SOURCE
+        MENUITEM SEPARATOR
+        MENUITEM "&First\tCtrl+Alt+Up",         ID_RECORD_FIRST
+        MENUITEM "&Previous\tAlt+Up",           ID_RECORD_PREVIOUS
+        MENUITEM "&Next\tAlt+Down",             ID_RECORD_NEXT
+        MENUITEM "&Last\tCtrl+Alt+Down",        ID_RECORD_LAST
+        MENUITEM SEPARATOR
+        MENUITEM "&Sort",                       ID_RECORD_SORTED
+    END
+    POPUP "&Search"
+    BEGIN
+        MENUITEM "&Find...\tCtrl+F",            ID_SEARCH_FIND
+        MENUITEM "Find &next\tF3",              ID_SEARCH_FINDNEXT
+        MENUITEM "&Replace...\tCtrl+H",         ID_SEARCH_REPLACE
+        MENUITEM SEPARATOR
+        MENUITEM "Regular e&xpression",         ID_SEARCH_REGULAREXPRESSION
+        MENUITEM SEPARATOR
+        MENUITEM "&Toggle Bookmark\tCtrl+F2",   ID_SEARCH_TOGGLEBOOKMARK
+        MENUITEM "Next &Bookmark\tF2",          ID_SEARCH_NEXTBOOKMARK
+        MENUITEM "&Previous Bookmark\tShift+F2", ID_SEARCH_PREVIOUSBOOKMARK
+        MENUITEM "&Clear Bookmarks\tCtrl+Shift+F2", ID_SEARCH_CLEARBOOKMARKS
+        MENUITEM SEPARATOR
+        MENUITEM "&Go to record\tF4",           ID_SEARCH_GOTORECORD
+        MENUITEM SEPARATOR
+        MENUITEM "Find &Duplicates...",         ID_SEARCH_FINDDUPLICATE
+    END
+    POPUP "&View"
+    BEGIN
+        POPUP "&Toolbars"
+        BEGIN
+            MENUITEM "&Standard",                   ID_VIEW_TOOLBAR
+            MENUITEM "&Filter",                     ID_VIEW_TOOLBARS_FILTER
+            MENUITEM "&Quicksearch",                ID_VIEW_TOOLBARS_QUICKSEARCH
+
+            MENUITEM SEPARATOR
+            MENUITEM "&Customize...",               ID_VIEW_TOOLBARS_CUSTOMIZE
+
+        END
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+        MENUITEM SEPARATOR
+        MENUITEM "&List\tCtrl+1",               ID_VIEW_LISTVIEW
+        MENUITEM "S&ource\tCtrl+2",             ID_VIEW_SOURCEVIEW
+        MENUITEM "&Record\tCtrl+3",             ID_VIEW_RECORD
+        MENUITEM SEPARATOR
+        MENUITEM "&Gridlines",                  ID_VIEW_GRIDLINES
+        MENUITEM "&Columns...",                 ID_VIEW_COLUMNS
+        MENUITEM SEPARATOR
+        MENUITEM "Toggle &Quicksearch\tCtrl+T", ID_VIEW_TOGGLEQUICKSEARCH
+        MENUITEM SEPARATOR
+        MENUITEM "&Fold all",                   ID_VIEW_FOLDALL
+        MENUITEM "&Expand all",                 ID_VIEW_EXPANDALL
+    END
+    POPUP "&Tools"
+    BEGIN
+        MENUITEM "Generate &Keys",              ID_TOOLS_GENERATEKEYS
+        MENUITEM "&Filter...",                  ID_TOOLS_FILTER
+        MENUITEM "&Value list",                 ID_TOOLS_VALUELIST
+        MENUITEM "&Generate from AUX...",       ID_TOOLS_GENERATEFROMAUX
+        MENUITEM "Online &search...",           ID_TOOLS_ONLINESEARCH
+        MENUITEM SEPARATOR
+        MENUITEM "&Options...",                 ID_TOOLS_OPTIONS
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&Manual\tF1",                 ID_HELP_MANUAL
+        MENUITEM "&ChangeLog",                  ID_HELP_CHANGELOG
+        MENUITEM SEPARATOR
+        MENUITEM "Check for &Update",           ID_HELP_CHECKFORUPDATE
+        MENUITEM SEPARATOR
+        MENUITEM "&About BibEdt...",            ID_APP_ABOUT
+    END
+END
+
+IDR_MENU_SOURCEVIEW MENU DISCARDABLE 
+BEGIN
+    POPUP "Popup"
+    BEGIN
+        MENUITEM "&Undo\tCtrl+Z",               ID_SOURCEVIEW_UNDO
+        MENUITEM "&Redo\tSchift+Ctrl+Z",        ID_SOURCEVIEW_REDO
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t\tCtrl+X",                ID_SOURCEVIEW_CUT
+        MENUITEM "&Copy\tCtrl+C",               ID_SOURCEVIEW_COPY
+        MENUITEM "&Paste\tCtrl+V",              ID_SOURCEVIEW_PASTE
+        MENUITEM "&Delete\tDel",                ID_SOURCEVIEW_DELETE
+        MENUITEM SEPARATOR
+        MENUITEM "Select &All\tCtrl+A",         ID_SOURCEVIEW_SELECTALL
+        MENUITEM "Copy Key",                    ID_POPUP_COPYKEY
+        MENUITEM SEPARATOR
+        MENUITEM "&Edit item...\tCtrl+E",       ID_SOURCEVIEW_EDITITEM
+        MENUITEM SEPARATOR
+        MENUITEM "&Go to record\tF4",           ID_SEARCH_GOTORECORD
+        MENUITEM "Find...\tCtrl+F",             ID_POPUP_FIND
+        MENUITEM "&Toggle Bookmark\tCtrl+F2",   ID_POPUP_TOGGLEBOOKMARK
+        MENUITEM SEPARATOR
+        MENUITEM "&Fold all",                   ID_VIEW_FOLDALL
+        MENUITEM "&Expand all",                 ID_VIEW_EXPANDALL
+    END
+END
+
+IDR_MENU_LISTVIEW MENU DISCARDABLE 
+BEGIN
+    POPUP "Popup"
+    BEGIN
+        MENUITEM "&Edit...\tCtrl+Enter",        ID_RECORD_EDIT
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t\tCtrl+X",                ID_EDIT_CUT
+        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY
+        MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE
+        MENUITEM "&Delete\tDel",                ID_EDIT_DELETE
+        MENUITEM SEPARATOR
+        MENUITEM "Select &all\tCtrl+A",         ID_EDIT_SELECT_ALL
+        MENUITEM "Copy &Key\tCtrl+K",           ID_RECORD_COPYKEY
+        MENUITEM SEPARATOR
+        MENUITEM "&Find...\tCtrl+F",            ID_SEARCH_FIND
+        MENUITEM "&Toggle Bookmark\tCtrl+F2",   ID_SEARCH_TOGGLEBOOKMARK
+    END
+    POPUP "Header"
+    BEGIN
+        MENUITEM "&Columns...",                 ID_VIEW_COLUMNS
+    END
+END
+
+IDR_MENU_FIELDLIST MENU DISCARDABLE 
+BEGIN
+    POPUP "Popup"
+    BEGIN
+        MENUITEM "&Add",                        ID_FIELDLIST_POPUP_ADD
+        MENUITEM "&Edit...",                    ID_FIELDLIST_POPUP_EDIT
+        MENUITEM "&Remove\tDel",                ID_FIELDLIST_POPUP_REMOVE
+        MENUITEM SEPARATOR
+        MENUITEM "&Crossref...",                ID_POPUP_CROSSREF
+        MENUITEM "&Browse...",                  ID_POPUP_BROWSE
+        MENUITEM "&Local URL...",               ID_POPUP_LOCALURL
+        MENUITEM "&Filter...",                  ID_POPUP_FILTER
+    END
+END
+
+IDR_MENU_PREVIEW MENU DISCARDABLE 
+BEGIN
+    POPUP "Preview"
+    BEGIN
+        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY
+        MENUITEM "Copy &HTML",                  ID_PREVIEW_COPYHTML
+        MENUITEM "Copy &Link",                  ID_PREVIEW_COPYLINK
+        MENUITEM SEPARATOR
+        MENUITEM "Select &all\tCtrl+A",         ID_EDIT_SELECT_ALL
+        MENUITEM SEPARATOR
+        MENUITEM "&View Source",                ID_PREVIEW_VIEWSOURCE
+    END
+END
+
+IDR_MENU_VALUELIST MENU DISCARDABLE 
+BEGIN
+    POPUP "Popup"
+    BEGIN
+        MENUITEM "&Select",                     ID_POPUP_SELECT
+    END
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 0,7,2,35
+ PRODUCTVERSION 0,7,2,35
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "http://bibedt.sourceforge.net/\0"
+            VALUE "CompanyName", "Stefan Ascher\0"
+            VALUE "FileDescription", "BibTeX Database Editor\0"
+            VALUE "FileVersion", "0, 7, 2, 35\0"
+            VALUE "InternalName", "bibedt\0"
+            VALUE "LegalCopyright", "Copyright (C) 2005-2006 Stefan Ascher\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "bibedt.exe\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "BibEdt\0"
+            VALUE "ProductVersion", "0, 7, 2, 35\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_DIALOG_COPYCITE DLGINIT
+BEGIN
+    IDC_COMBO_CUSTOM, 0x403, 10, 0
+0x635c, 0x7469, 0x7b65, 0x7325, 0x007d, 
+    IDC_COMBO_CUSTOM, 0x403, 12, 0
+0x635c, 0x7469, 0x5b65, 0x7b5d, 0x7325, 0x007d, 
+    IDC_COMBO_CUSTOM, 0x403, 14, 0
+0x635c, 0x7469, 0x5b65, 0x5b5d, 0x7b5d, 0x7325, 0x007d, 
+    IDC_COMBO_CUSTOM, 0x403, 11, 0
+0x635c, 0x7469, 0x7065, 0x257b, 0x7d73, "\000" 
+    IDC_COMBO_CUSTOM, 0x403, 11, 0
+0x635c, 0x7469, 0x7465, 0x257b, 0x7d73, "\000" 
+    0
+END
+
+IDD_OPTIONSPAGE_PRINT DLGINIT
+BEGIN
+    IDC_COMBO_UNITS, 0x403, 6, 0
+0x6950, 0x6578, 0x006c, 
+    IDC_COMBO_UNITS, 0x403, 5, 0
+0x6e49, 0x6863, "\000" 
+    IDC_COMBO_UNITS, 0x403, 11, 0
+0x694d, 0x6c6c, 0x6d69, 0x7465, 0x7265, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "BibEdt\n\nDatabase\nBibTeX Files (*.bib)\n.bib\nBibTeX.Document\nBibTeX File"
+    IDS_STRING_OPTIONS_CAP  "Options"
+    IDS_STRING_TBCAPTION_STD "Standard"
+    IDS_STRING_RTFFILTER    "RTF Files (*.rtf)|*.rtf"
+    IDS_STRING_NEWPREAMBLE  "New preamble text"
+    IDS_STRING_NODUPLICATES "No duplicate items found."
+    IDS_STRING_NEWFIELD     "New-Field"
+    IDS_STRING_FILTERCAPTION "Filter"
+    IDS_STRING_CONDITION    "Condition"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "BibEdt"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew (Ctrl+N)"
+    ID_FILE_OPEN            "Open an existing document\nOpen (Ctrl+O)"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave (Ctrl+S)"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+    ID_FILE_PAGE_SETUP      "Change the page options\nPage Setup"
+    ID_FILE_PRINT_SETUP     "Change the printer and printing options\nPrint Setup"
+    ID_FILE_PRINT           "Print the active document\nPrint (Ctrl+P)"
+    ID_FILE_PRINT_PREVIEW   "Display full pages\nPrint Preview"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit (Alt+F4)"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy (Ctrl+C)"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut (Ctrl+X)"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste (Ctrl+V)"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All (Ctrl+A)"
+    ID_EDIT_UNDO            "Undo last edit action\nUndo (Ctrl+Z)"
+    ID_EDIT_REDO            "Undo last undo action\nRedo (Ctrl+Y)"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the Standard toolbar\nToggle Toolbar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "Close print preview mode\nCancel Preview"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_COLUMNVALUE_TEXT    "Value"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_STRING_SEL_CFGDIR   "Select configuration directory"
+    IDS_STRING_EXT_BIB      ".bib"
+    IDS_STRING_EXT_AUX      ".aux"
+    IDS_STRING_UNKNOWN_XSLERROR "Unknown XSL parsing error!"
+    IDS_ERR_NOTEMPLATEFILE  "Can't find template file ""%s""."
+    IDS_ERR_NOSUCHLANGUAGE  "No such language."
+    IDS_ERR_LOADINGLANGLIB  "Unable to load language library."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_STRING_ADDEXPORTER  "Add Exporter"
+    IDS_STRING_ADDEXPORTER_PROMPT "&Enter the name of the exporter:"
+    IDS_STRING_XSLPARSEERR  "XSL parse error (%s, ln %d, col %d): (%d) %s"
+    IDS_GENERATEKEYS_PROMPT "Do you really want to generate for all items new keys?"
+    IDS_DONATE_URL          "http://sourceforge.net/donate/index.php?group_id=142263"
+    IDS_STRING_RENAMEEXPORTER "Rename Exporter"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_STRING_XSLFILTER    "XSL files (*.xsl)|*.xsl"
+    IDS_STRING_XMLPARSEERR  "XML parse error (%s, ln %d, col %d): (%d) %s"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_STRING_NEWPROFCAP   "New Profile"
+    IDS_STRING_NEWPROFPROMPT "Enter the name of the new profile:"
+    IDS_STRING_SEARCHRESULT "Results:"
+    IDS_STRING_SEARCHRESULTSNUM "Results (%d record(s) found):"
+    IDS_STRING_RENPROF      "Rename Profile"
+    IDS_STRING_RENPROFPROMPT "Enter the new name:"
+    IDS_STRING_NOMISSING    "No missing Fields"
+    IDS_STRING_LOADERR      "Unable to load file."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_STRING_LV_COL_KEY   "Key"
+    IDS_STRING_REGKEY       "Ascher"
+    IDS_STRING_LV_COL_AUTHOR "Author"
+    IDS_STRING_LV_COL_TITLE "Title"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_STRING_FIELD        "Field"
+    IDS_STRING_VALUE        "Value"
+    IDS_STRING_NAME         "Name"
+    IDS_STRING_ADDREC       "Add Record"
+    IDS_STRING_EDITREC      "Edit Record"
+    IDS_STRING_BIBFILTER    "BibTeX Files (*.bib)|*.bib"
+    IDS_STRING_ALLFILTER    "All Files (*.*)|*.*"
+    IDS_STRING_EDNTERKEY    "Please enter a Key."
+    IDS_STRING_INVALIDKEY   "The Key contains spaces. This will cause problems."
+    IDS_STRING_ENTERSTRING  "Please enter a string to search for."
+    IDS_STRING_CITEFORMAT   "\\cite{%s}"
+    IDS_STRING_DUPLITEMS    "%d Duplicate Item(s)"
+    IDS_STRING_TXTFILTER    "Textfiles (*.txt)|*.txt"
+    IDS_STRING_COLCAPADD    "Add Column"
+    IDS_STRING_COLPROMPT    "&Enter Column (= Field) name"
+    IDS_STRING_HTMLFILTER   "HTML Files (*.html;*.htm)|*.html;*.htm"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_RECORD_ADD           "Add record\nAdd (Ctrl+Ins)"
+    ID_RECORD_REMOVE        "Remove selected record\nRemove (Ctrl+Del)"
+    ID_RECORD_SORTED        "Sort the file by Key\nSort"
+    ID_VIEW_ROWSELECT       "Select entire row in the list\nRow select"
+    ID_VIEW_GRIDLINES       "Show or hide grid lines\nGridlines"
+    ID_VIEW_OPTIONS         "Change program options\nOptions"
+    ID_INDICATOR_RECCOUNT   "%d Record(s)            "
+    ID_FILE_EXPORT_SUBSET   "Export the selected subset to another BibTeX file\nSubset"
+    ID_FILE_EXPORT_HTML     "Export selection as HTML\nHTML"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_EXPORT_TEXT     "Export selection as Text\nText"
+    ID_FILE_IMPORT          "Append records from another BibTeX file\nImport"
+    ID_RECORD_UP            "Move Item up\nUp"
+    ID_RECORD_DOWN          "Move Item down\nDown"
+    ID_RECORD_EDIT          "Edit selected record\nEdit (Ctrl+Enter)"
+    ID_EDIT_DELETE          "Delete selected Item(s)\nDelete (Del)"
+    ID_EDIT_PREAMBLE        "Edit Preamble\nPreamble"
+    ID_EDIT_STRINGS         "Edit Strings\nStrings"
+    ID_EDIT_SEARCH          "Search for a record\nSearch"
+    ID_EDIT_FINDNEXT        "Find next match\nFind next"
+    ID_EDIT_COPYCITATION    "Copy selected with \\cite{}\nCopy Citation (Shift+Ctrl+C)"
+    ID_RECORD_SOURCE        "View source of record\nSource"
+    ID_INDICATOR_TYPE       "%s                      "
+    ID_EDIT_SELECTALL       "Select all records\nSelect all"
+    ID_INDICATOR_SELCOUNT   "%d of %d selected       "
+    ID_RECORD_FINDDUPLICATE "Find items with the same key\nFind Duplicates"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_COLUMNS         "Columns to show in the list\nColumns"
+    ID_FILE_EXPORT_RTF      "Export selection as RTF\nRTF"
+    ID_HELP_README          "Show the Manual\nManual"
+    ID_HELP_CHANGELOG       "Show ChangeLog file\nChangeLog"
+    ID_FILE_SOURCE          "Edit the source of the file\nSource"
+    ID_RECORD_PREVIOUS      "Select previous record\nPrevious (Alt+Up)"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_STRING_NEWFILTER    "NewFilter"
+    IDS_STRING_NOFILTER     "[No Filter]"
+    IDS_STRING_FILTEREXISTS "A filter with this name already exists.\nPlease use another name."
+    IDS_STRING_QSCAPTION    "Quicksearch"
+    IDS_STRING_ALLFIELDS    "[All Fields]"
+    IDS_STRING_ABSTRACT     "Abstract"
+    IDS_STRING_AUXFILTER    "AUX files (*.aux)|*.aux"
+    IDS_STRING_KEYNOTFOUND  "WARNING: Key ""%s"" not found"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_STRING_ERROR        "ERROR: %s"
+    IDS_STRING_PARSING      "Parsing: %s"
+    IDS_STRING_AUXSUCC      "Success: Created file %s with %d item(s)"
+    IDS_STRING_FOUNDKEY     "Hint: Found key %s"
+    IDS_STRING_AUXSTAT      "There were %d error(s) and %d warning(s)"
+    IDS_STRING_CROSSREFCAP  "Insert Crossref"
+    IDS_STRING_BIBDATA      "Hint: Database is %s"
+    IDS_STRING_BIBSTYLE     "Hint: Style is %s"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_RECORD_FIRST         "Select first record\nFirst (Ctrl+Alt+Up)"
+    ID_RECORD_LAST          "Select last record\nLast (Ctrl+Alt+Down)"
+    ID_RECORD_NEXT          "Select next record\nNext (Alt+Down)"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_SEARCH_CLEARBOOKMARKS 
+                            "Clear all Bookmarks\nClear Bookmarks (Ctrl+Shift+F2)"
+    ID_SEARCH_TOGGLEBOOKMARK "Toggle Bookmark\nToggle Bookmark (Ctrl+F2)"
+    ID_SEARCH_NEXTBOOKMARK  "Go to next Bookmark\nNext Bookmark (F2)"
+    ID_SEARCH_PREVIOUSBOOKMARK 
+                            "Go to previous Bookmark\nPrevious Bookmark (Shift+F2)"
+    ID_SEARCH_FIND          "Find text\nFind (Ctrl+F)"
+    ID_SEARCH_FINDNEXT      "Find next match\nFind next (F3)"
+    ID_SEARCH_REPLACE       "Replace text\nReplace (Ctrl+H)"
+    ID_SEARCH_GOTORECORD    "Go to selected record\nGo to record (F4)"
+    ID_SOURCEVIEW_UNDO      "Undo last edit action\nUndo"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_SOURCEVIEW_REDO      "Undo last undo action\nRedo"
+    ID_SOURCEVIEW_CUT       "Cut the selection and put it on the Clipboard\nCut"
+    ID_SOURCEVIEW_COPY      "Copy the selection and put it on the Clipboard\nCopy"
+    ID_SOURCEVIEW_PASTE     "Insert Clipboard contents\nPaste"
+    ID_SOURCEVIEW_SELECTALL "Select the entire document\nSelect All"
+    ID_SOURCEVIEW_DELETE    "Delete the selection\nDelete"
+    ID_SOURCEVIEW_EDITITEM  "Edit selected item\nEdit item"
+    ID_POPUP_FIND           "Find text\nFind"
+    ID_SEARCH_FINDDUPLICATE "Find items with duplicate keys\nFind Duplicates"
+    ID_EDIT_COPYKEY         "Copy the key of the selected item\nCopy Key"
+    ID_POPUP_COPYKEY        "Copy Key under Caret\nCopy Key"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBARS_FILTER "Show or hide the Filter Bar\nToggle Filter"
+    ID_VIEW_FILTER          "Define some filter\nFilter"
+    ID_VIEW_TOOLBARS_QUICKSEARCH 
+                            "Show or hide Quicksearch Bar\nToggle Quicksearch"
+    ID_FIELDLIST_POPUP_EDIT "Edit value in dialog\nEdit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_FOLDALL         "Fold all items\nFold all"
+    ID_VIEW_EXPANDALL       "Expand all items\nExpand all"
+    ID_RECORD_COPYKEY       "Copy the key of the selected item\nCopy Key (Ctrl+K)"
+    ID_HELP_MANUAL          "Show the manual\nManual (F1)"
+    ID_POPUP_BROWSE         "Browse for a filename\nBrowse"
+    ID_VIEW_PREVIEW         "Show or hide the Preview pane\nToggle Preview"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_TOOLS_GENERATEFROMAUX 
+                            "Generate a BibTeX file from an AUX file\nGenerate from AUX"
+    ID_POPUP_CROSSREF       "Add a Crossref field\nCrossref"
+    ID_HELP_CHECKFORUPDATE  "Check if there is a newer version as you're using\nCheck for Update"
+    ID_SEARCH_REGULAREXPRESSION 
+                            "Toggle regular expression for Quicksearch\nRegular expression"
+    ID_RECORD_GENERATEKEY   "Automatically generate a key for the selected item\nGenerate Key (Ctrl+G)"
+    ID_EDIT_MODIFIED        "Document has been modified\nModified"
+    ID_POPUP_FILTER         "Apply a Filter\nFilter"
+    ID_FILE_EXPORT_XML      "Export selection as XML\nXML"
+    ID_VIEW_PREIVEW         "Show or hide Preivew pane\nPreview"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_STRING_WARNING      "WARNING: %s"
+    IDS_STRING_NOBIBDATA    "No database file"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_STRING_NOSTYLE      "No bibliography style"
+    IDS_STRING_MANUALNOTFOUND 
+                            "The documentation file was not found.\nWould you like to download it now?"
+    IDS_STRING_FILECHANGED  "The file %s has been changed by another program.\nDo you want to reload the file?"
+    IDS_STRING_FILEDELETED  "File %s has been deleted."
+    IDS_STRING_STRANGEQUERYTYPE "Unknown or unsupported query type."
+    IDS_STRING_YAZEXCEPTION "Something went wrong!\nMaybe no connection, unfriendly firewall,...?"
+    IDS_STRING_XMLFILTER    "XML files (*.xml)|*.xml"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_LISTVIEW        "Activate List view\nList (Ctrl+1)"
+    ID_VIEW_SOURCEVIEW      "Activate Source view\nSource (Ctrl+2)"
+    ID_VIEW_RECORD          "Activate Record view\nRecord (Ctrl+3)"
+    ID_VIEW_TOGGLEQUICKSEARCH 
+                            "Toggle Quicksearch\nToggle Quicksearch (Ctrl+T)"
+    ID_RECORD_INSERTKEY     "Insert Key into an Editor\nInsert Key (Ctrl+I)"
+    ID_PREVIEW_COPYLINK     "Copy link\nCopy Link"
+    ID_TOOLS_GENERATEKEYS   "Generate keys for the entire file\nGenerate Keys"
+    ID_POPUP_FOLDALL        "Fold all\nFold all"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_POPUP_EXPANDALL      "Expand all\nExpand all"
+    ID_POPUP_LOCALURL       "Add a local URL\nLocal URL"
+    ID_PREVIEW_COPYHTML     "Copy as HTML\nCopy HTML"
+    ID_TOOLS_VALUELIST      "Show a list with all values in the file\nValue list"
+    ID_POPUP_SELECT         "Select items with matching field values\nSelect"
+END
+
+#endif    // Englisch (USA) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Deutsch (Österreich) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEA)
+#ifdef _WIN32
+LANGUAGE LANG_GERMAN, SUBLANG_GERMAN_AUSTRIAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\bibedt.rc2""  // Nicht mit Microsoft Visual C++ bearbeitete Ressourcen\r\n"
+    "#include ""afxres.rc""         // Standardkomponenten\r\n"
+    "#include ""afxprint.rc""       // Ressourcen für Drucken/Seitenansicht\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Deutsch (Österreich) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\bibedt.rc2"  // Nicht mit Microsoft Visual C++ bearbeitete Ressourcen
+#include "afxres.rc"         // Standardkomponenten
+#include "afxprint.rc"       // Ressourcen für Drucken/Seitenansicht
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

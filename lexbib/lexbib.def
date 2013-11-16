@@ -1,0 +1,7 @@
+LIBRARY LEXBIB
+
+EXPORTS
+  Lex = ?Lex@@YGXIIHHQAPADPAXPAD@Z;
+  Fold = ?Fold@@YGXIIHHQAPADPAXPAD@Z;
+  GetLexerName = ?GetLexerName@@YGXIPADH@Z;
+  GetLexerCount = ?GetLexerCount@@YGHXZ;

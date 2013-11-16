@@ -1,0 +1,8 @@
+..\license.txt
+..\readme.txt
+..\changelog.txt
+..\*.xsl
+bibedt.exe
+SciLexer.dll
+lexbib.dll
+regex.dll

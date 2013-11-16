@@ -1,0 +1,219 @@
+================================================================================
+BibEdt ChangeLog
+Copyright (C) 2005-2006, Stefan Ascher <stievie[at]users[dot]sourceforge[dot]net>
+http://bibedt.sourceforge.net/
+================================================================================
+
+Version 0.7.2 (14-08-2006)
+- Fixed several other minor drawing bugs in list view.
+- Correctly draws focus rect when list view has focus on XP.
+- It's no longer possible to change config files but only to change a config
+  directory which contains the config files.
+- Uses new style filedialog where possible.
+- Search -> Find in List view does not bookmark found items but selectes them by
+  default. Added Mark all button to dialog to bookmark all found items.
+- Search -> Find searches only visible items.
+- Added Fold all/Expand all commands to source view popup menu.
+- Fixed some edit problems (Copy, Paste etc.) in record view.
+- Edit -> Copy in list view also copies as formatted HTML with the copyhtml.xsl
+  style sheet.
+- Added [find("str")] and [filter("name")] DDE commands.
+- There is now some support for localizing BibEdt for you language, but I don't
+  provide the language DLLs. If you like this program in your language make a 
+  resource DLL, see the MSDN library how, and put the DLL in a subfolder with the
+  name 'lang'. The version number must be the same as BibEdts and the name of the
+  language must be in the comment field of the version resource.
+- More flxible search in list view.
+- Remove not required fields when generating a BibTeX file from an AUX file.
+- Fixed some problems with the HTML viewer (links, scrolling etc.)
+- Change the default fonts of the HTML viewer
+- Added Local URL menuitem to record view
+- Added basic @string expansion. Values with embedded strings does not work, also
+  concatenation of strings is not expanded. Bug (sic) #1537633
+- Uses XSLT for key generation, implements FRs #1475451 and part of #1502124
+- Added "list of authors, journals, titles", FR #1537999
+- Resolves crossref.
+
+Version 0.7.1 (10-05-2006)
+- Added Menuitems and shortcuts to activate a View.
+- Added Toggle Quicksearch command.
+- Generic exporter. Export to virtually any format using XSL transformation. I
+  love it!!! Removed the built in HTML exporter, since it's much more flexible to
+  do it with XSLT, e.g. with plain.xsl. Didn't remove the plain text exporter,
+  although you could do it with XSLT as well, but with some linmitations. If you've
+  written an exporter, please submit a patch and I'll include it in the distribution,
+  thanks!
+- Updated to YAZ 2.1.12 and some other libraries
+- Added Insert Key (Menu Record) command. Inserts the selected key into your LaTeX
+  Editor. Before you must configure Options -> Default LaTeX Editor. Enter the 
+  classname of the toplevel and child window of your editor. You could use programs
+  like GetWnd (http://web.utanet.at/ascherst/files/getwnd.zip) to find out the
+  classnames.
+- Replaced RTF preview with HTML preview that is completely customizeable with
+  the preview.xsl stylesheet.
+- Added [focus("key")] DDE command.
+- DDE commands are case insensitive.
+- Added Automatic Key Generation for all, part of FR #1475451.
+- Items with missing fields have different text color.
+- Fixed bug #1464177: Drawing bug in List view
+
+Version 0.6.4 (26-10-2005)
+- Added stylesheet to transform XML -> RDF with the Dublin Core notation. This
+  should make FR #1237432 obsolete. This way I do not need to care what format
+  you could like, you just can edit xml2rdf.xsl.
+- Fixed exception in Find Duplicates dialog.
+- Fixed bug #1331170: Filter [all fields] doesn't work.
+- Quicksearching [All Fields] searches also the key, related to bug #1331170.
+  
+Version 0.6.3 (15-10-2005)
+- Disable special character conversion for certain fields in config.bib. Add
+    convert_url={false},
+    convert_local-url={false}
+  to the @options item to disable conversion for url and local-url fields or delete
+  config.bib.
+- Filter defined in config.bib are appended to filter defined in a file.
+- Shows missing fields in Record view.
+- Resolves DOI addresses.
+- Apply filter to bibitem with a dialog.
+- Added XML Exporter. Supplied with the program is a XML style sheet file (plain.xsl)
+  to format the transform it to HTML. Edit this file if you wish.
+- Added Toolbar customization. Added some additional toolbar buttons which can be
+  added to the toolbar with the customize dialog (View -> Toolbars -> Customize).
+- Bugfixes.
+
+Version 0.6.2 (10-09-2005)
+- Better search results.
+- Converts search results from UTF-8 to ISO Latin-1.
+- Online search dialog is modeless.
+- Attempts to find the type of an item.
+- Better formating of search results.
+- Optionally save password for online search. WARNING: It is saved plain to the
+  profiles file!
+
+Version 0.6.1 (03-09-2005)
+- Removes invalid characters when generating a key.
+- Checks for file changes by an other program.
+- Added menuitem (Record) for generate key and a shortcut.
+- Added basic support for the Z39.50 protocoll (FR #1276078).
+- More flexible find duplicates (FR #1277338).
+- Fixed some bugs
+
+Version 0.5.4 (27-08-2005)
+- When generating a bib file from an aux file it also adds cross-referrenced items
+  to the target file.
+- Added goto["filename", "itemkey"] DDE command.
+- Added Help -> Check for Update command.
+- Renamed bibedt.bib to config.bib.
+- Added regular expression search for the list view (FR #1237464).
+- Moved some menus from View to Tools.
+- Automatically adds all @string and @preamble items in config.bib to newly created
+  files.
+- Changing field name in record view didn't set the item text.
+- Autocomplete for field values in record view.
+- Regular expressions for quicksearch.
+- Cross-referenced items are put at the bottom of the file when sorting. This may
+  require sorting the file twice.
+- Minor improvments and many bugfixes.
+
+Version 0.5.3 (20-08-2005)
+- Preview pane has scroll bar.
+- Editing a field value with the dialog didn't set the modified flag.
+- Clickable links for URL and Local-Url fields in preview pane.
+- Editing a field with the dialog didn't set the item text.
+- Removed Row select option, has always full row select.
+- Shows focused item even when the list view does not have the focus.
+- Generate a BibTeX file from an AUX file.
+- Added Some support for Crossref field.
+- Field list does not exit edit mode when other window gets the focus -> more
+  comfortable editing, hopefully.
+- The documentation is no longer part of the binary distribution, download it extra
+  from http://sourceforge.net/project/showfiles.php?group_id=142263&package_id=161101
+  I assume not much need it and why waste bandwidth for something that is not needed?
+- Significant performance improvmenets with new string functions, some code is
+  about 3 times faster. Now even tugboat.bib (1.2 MB with ~2300 items) loads and
+  saves in an acceptable time on my computer (PIII, 500 MHz, 256 MB RAM).
+- Removed URLs in popup menus, caused only problems.
+- Fixed many bugs.
+
+Version 0.5.2 (13-08-2005)
+- Puts filter at the top of the file when sorting.
+- Delete key not working in some textboxes (another shortcut conflict).
+- Folding of bibitems (feature #1239109) and Fold all and Expand all commands.
+- Open URL or Local-Url from Popupmenu in list view and record view.
+- Replace special characters in Source view, on by default. You may want to
+  disable it.
+- Renamed filter item from `filter' to `__filter__', you should rename it by hand
+  to keep your filter.
+- Scroll to selected item in source view is optional.
+- Moved Copy Key command from Edit to Record.
+- Direct access to what fields are included in quicksearch.
+- Edit directly the field value in the list view (FR #1257423).
+- Added Preview to the list view.
+- Some bugs were fixed.
+
+Version 0.5.1 (03-08-2005)
+- Added filter (feature #1237438). It's great, try it!
+- Added Quicksearch bar, also great.
+- Source Dialog is resizeable (I thought it was?!?).
+- Fixed focus problem of source view.
+- Some improvements to the UI.
+- Fixed some bugs.
+
+Version 0.4.3 (28-07-2005)
+- Fixed some print preview bugs.
+- Print and print preview for source view.
+- Added search in Abstracts only.
+- Added bookmarks for the list view.
+- Added Copy Key menuitem, copy the key of the focused item.
+- Several small UI improvements.
+- Fixed some other bugs.
+
+Version 0.4.2 (22-07-2005)
+- Fixed some AVs and other bugs.
+- Fixed some shortcut conflicts.
+- Performance improvements.
+- The focused item (the item with the focus rectangle) in the list is the one
+  and only selected.
+- Many bugfixes, indeed, the last version was VERY buggy!
+
+Version 0.4.1 (18-07-2005)
+- If no duplicate items are found it only shows a MessageBox.
+- Saves window placements of dialogs.
+- Edit the source of the entire file.
+- Dropping a file on the Bibitem dialog adds a field Local-Url with the filename
+  as value.
+- Double click on Url or Local-Url field opens the file or URL.
+- Saves search history and cite formats in copy citation dialog.
+- Customizeable font styles for export modify bibedt.bib. Many other improvements
+  to the exporter.
+- Open last file at start option.
+- Added BibTeX lexer for Scintilla.
+- Tabbed view (feature #1237430) - List view, Source view and Item view.
+
+Version 0.3.1 (12-07-2005)
+- Comments inside Bibitems are allowed now, between fields:
+  @article{foo,
+    bar={foo bar},
+      % some comment
+      ...
+  }
+  Don't know if this is acceptable for BibTeX, don't think so.
+- Disable and format [numbers] in print and export in bibedt.bib
+- Edit -> Copy copies the selected item(s) also as RTF
+- Fixed AV when removing a Field in CBibItemDialog
+- Uses Scintilla as source editor
+- Preamble and Strings dialogs should work
+- Dialogs are resizeable
+
+Version 0.2.1 (07-07-2005)
+- Printing works now.
+- Improved sorting and key generation.
+- Customizeable export and print. You should delete bibedt.bib.
+- Export to RTF
+- Other improvements and fixes.
+
+Version 0.1.10 (29-06-2005)
+- Moved to SourceForge (http://bibedt.sourceforge.net/)
+
+================================================================================
+$Id: changelog.txt,v 1.166 2006/08/14 08:17:12 stievie Exp $
