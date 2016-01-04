@@ -10,18 +10,18 @@ if not exist output mkdir output
 rem Binary
 cd Release
 if exist ..\output\bebin%1.zip del ..\output\bebin%1.zip
-C:\Programme\7-ZIP\7z.exe a -tzip -mx ..\output\bebin%1.zip @..\zipbin
+"%PROGRAMFILES%\7-Zip\7z.exe" a -tzip -mx ..\output\bebin%1.zip @..\zipbin
 if errorlevel 1 goto nozip
 
 rem Source
 cd ..
 if exist output\besrc%1.zip del output\besrc%1.zip
-C:\Programme\7-ZIP\7z.exe a -tzip -mx output\besrc%1.zip @zipsrc
+"%PROGRAMFILES%\7-Zip\7z.exe" a -tzip -mx output\besrc%1.zip @zipsrc
 
 rem Documentation
 cd doc
 if exist ..\output\bedoc%1.zip del ..\output\bedoc%1.zip
-C:\Programme\7-ZIP\7z.exe a -tzip -mx ..\output\bedoc%1.zip .\bibedt.pdf
+"%PROGRAMFILES%\7-Zip\7z.exe" a -tzip -mx ..\output\bedoc%1.zip .\bibedt.pdf
 goto exit
 
 :nozip
